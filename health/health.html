@@ -1,0 +1,86 @@
+<canvas class="snow snowHealth"></canvas>
+<nav>
+    <div id="menuBut" ng-click="openMenu()">
+        <div id="menuBut1"></div>
+        <div id="menuBut2"></div>
+        <div id="menuBut3"></div>
+    </div>
+    <div id="menu" class="wrapMenu" ng-mouseleave="openMenu()">
+        <div id="mainPage"><a href="#!/dashboard"><div id="navDash" class="navOverlay"><i class="fab fa-facebook-f fa-3x"></i></div></a></div>
+        <div id="sectionTwo"><a href="#!/training"><div id="navTrain" class="navOverlay"><i class="material-icons md-48">fitness_center</i></div></a></div>
+        <div id="sectionThree"><a href="#!/note"><div id="navNote" class="navOverlay"><i class="material-icons md-48">format_list_numbered</i></div></a></div>
+        <div id="sectionFour"><a href="#!/food"><div id="navFood" class="navOverlay"><i class="material-icons">restaurant</i></div></a></div>
+        <div id="sectionFive"><a href="#!/water"><div id="navWat" class="navOverlay"><i class="material-icons md-dark md-inactive">local_drink</i></div></a></div>
+        <div id="sectionSix"><a href="#!/health"><div id="navSleep" class="navOverlay shine"><i class="material-icons md-dark md-inactive">local_hotel</i></div></a></div>
+        <div id="sectionSeven"><a href="#!/settings"><div id="navSet" class="navOverlay"><i class="material-icons md-48">settings</i></div></a></div>
+    </div>
+</nav>
+<div class="health">
+    <div class="overlayHealth">
+        <div class="headline">
+            <div class="lineHealth"></div>
+            <div class = "nameHealth"><i class="material-icons md-dark md-inactive">local_hotel</i><h1>Sleep</h1></div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-4 carr sleep">
+                    <div class="row justify-content-md-center">
+                        <div class="col-10 texts">
+                            <h3>Start and end of your sleep:</h3>
+                        </div>
+                    </div>
+                    <div class="row justify-content-md-center">
+                        <div class="col-4 inputs">
+                            <input type="time" name="time" placeholder="hh:mm" value="22:15:00" required>
+                        </div>
+                        <span>-</span>
+                        <div class="col-4 inputs">
+                            <input type="time" name="time" placeholder="hh:mm" value="08:15:00" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 carr sleep">
+                    <div class="row justify-content-md-center">
+                        <div class="col-10 texts">
+                            <h3>Quality of your sleep:</h3>
+                        </div>
+                    </div>
+                    <div class="row justify-content-md-center">
+                        <div class="col-10 star">
+                            <input type="radio" name="quality" value="1">1
+                            <input type="radio" name="quality" value="2">2
+                            <input type="radio" name="quality" value="3">3
+                            <input type="radio" name="quality" value="4">4
+                            <input type="radio" name="quality" value="5" checked> 5
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+            <div class="col-8 align-self-center carr">
+            <div class="row justify-content-md-center">
+                <div class="col-6 texts">
+                    <h3>Additional notes:</h3>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-8">
+                <textarea name="" id="healthText" cols="20" rows="10" ></textarea>
+                </div>
+            </div>
+            </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <button>Submit</button>
+            </div>
+        </div>
+        <div class="helpHealth"><button ng-click="showHelp()">?</button></div>
+    </div>
+</div>
+
+<div id="helpHealthPage" class="helpOverlay" ng-click="hideHelp()">
+    <div class="helpSign">
+        <h3>#HelpHealth</h3>
+        <p>The usage is very simple: as you drink water, be sure to fill it up using these instruments. As soon as you reach 100%, your job for today is done!</p>
+    </div>
+</div>

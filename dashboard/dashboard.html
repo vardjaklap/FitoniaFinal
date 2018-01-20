@@ -1,0 +1,74 @@
+<nav>
+    <div id="menuBut" ng-click="openMenu()">
+        <div id="menuBut1"></div>
+        <div id="menuBut2"></div>
+        <div id="menuBut3"></div>
+    </div>
+    <div id="menu" class="wrapMenu" ng-mouseleave="openMenu()">
+        <div id="mainPage"><a href="#!/dashboard"><div id="navDash" class="navOverlay shine"><i class="fab fa-facebook-f fa-3x"></i></div></a></div>
+        <div id="sectionTwo"><a href="#!/training"><div id="navTrain" class="navOverlay"><i class="material-icons md-48">fitness_center</i></div></a></div>
+        <div id="sectionThree"><a href="#!/note"><div id="navNote" class="navOverlay"><i class="material-icons md-48">format_list_numbered</i></div></a></div>
+        <div id="sectionFour"><a href="#!/food"><div id="navFood" class="navOverlay"><i class="material-icons">restaurant</i></div></a></div>
+        <div id="sectionFive"><a href="#!/water"><div id="navWat" class="navOverlay"><i class="material-icons md-dark md-inactive">local_drink</i></div></a></div>
+        <div id="sectionSix"><a href="#!/health"><div id="navSleep" class="navOverlay"><i class="material-icons md-dark md-inactive">local_hotel</i></div></a></div>
+        <div id="sectionSeven"><a href="#!/settings"><div id="navSet" class="navOverlay"><i class="material-icons md-48">settings</i></div></a></div>
+    </div>
+</nav>
+<canvas class="snow snowDashboard"></canvas>
+<div class="dashboard">
+    <div class="overlayDashboard">
+        <div class="headline">
+            <div class="lineDashboard"></div>
+            <div class = "nameDashboard"><h1>Dashboard</h1></div>
+        </div>
+
+        <div class="container dashb">
+            <div id="dashTr" class="dash">
+                <a href="#!/training">
+                    <div>
+                <h3>Training</h3>
+                <p>Today is the leg day!</p>
+                <i class="material-icons md-48">fitness_center</i>
+                    </div>
+                </a>
+            </div>
+            <div id="dashNote" class="dash">
+                <a href="#!/note">
+                    <div>
+                <h3>Note</h3>
+                <p>No tasks for today.</p>
+                <i class="material-icons md-48">format_list_numbered</i>
+                    </div>
+                </a>
+            </div>
+            <div id="dashFood" class="dash">
+                <a href="#!/food">
+                    <div>
+                <h3>Food</h3>
+                <p>Try to cut out fats for today.</p>
+                <i class="material-icons">restaurant</i>
+                    </div>
+                </a>
+            </div>
+            <div id="dashWat" class="dash">
+                <a href="#!/water">
+                    <div>
+                <h3>Water</h3>
+                <p>42% so far!</p>
+                <i class="material-icons md-dark md-inactive">local_drink</i>
+                    </div>
+                </a>
+            </div>
+            <div id="dashSleep" class="dash">
+                <a href="#!/health">
+                    <div>
+                <h3>Sleep</h3>
+                <p>Good work maintaining your cycle!</p>
+                <i class="material-icons md-dark md-inactive">local_hotel</i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>

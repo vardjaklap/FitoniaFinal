@@ -1,0 +1,1065 @@
+/*-----------------------------ANIMATIONS ENTER LEAVE------------------*/
+
+@keyframes appear{
+  0%      { opacity: 0; }
+  20%     { opacity: 1; }
+  40%     { opacity: 1; }
+  60%     { opacity: 1; }
+  100%    { opacity: 1; }
+}
+@keyframes disappear{
+  0%      { opacity: 1; }
+  20%     { opacity: 0.5; }
+  40%     { opacity: 0; }
+  60%     { opacity: 0; }
+  100%    { opacity: 0; }
+}
+.ng-enter           { animation: appear 0.5s both ease-in; z-index: -100; }
+.ng-leave           { animation: disappear 0.5s both ease-in; z-index: -90; }
+
+
+/* app css stylesheet */
+*{
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+  margin: 0;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  outline: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+  overflow:hidden;
+}
+h1, h3{
+  font-family: 'Roboto Slab', serif;
+}
+.snow{
+  position: absolute;
+  top:0;
+  z-index: -999;
+
+}
+/*------------------NAV---------------------------*/
+
+nav{
+  position: absolute;
+  z-index: 10;
+}
+nav .wrap{
+  height: 700px;
+}
+
+nav > div > div{
+  height: 110px;
+  width: 80px;
+  position: relative;
+  border-radius: 0 3px 30px 0;
+  text-align: center;
+}
+nav i{
+  position: relative;
+  top: 40px;
+  color: rgba(14, 14, 14, 0.5);
+}
+
+.headLine i, h1{
+  display: inline-block;
+}
+.material-icons {
+  font-size: 50px;
+
+}
+#menuBut{
+  height: 90px;
+  padding: 35px 23px;
+}
+#menuBut div{
+  width: 35px;
+  height: 4px;
+  background-color: black;
+  border-radius: 1px;
+  margin: 6px 0;
+}
+.menubar1{
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+  transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+.menubar2{
+  opacity: 0;
+}
+.menubar3{
+  -webkit-transform: rotate(45deg) translate(-7px, -7px) ;
+  transform: rotate(45deg) translate(-7px, -7px) ;
+}
+.wrapMenu{
+  height: 0;
+}
+.activeMenu{
+  transition: all 0.7s;
+  height: 740px;
+}
+
+#mainPage{
+  height: 80px;
+  background: rgb(244, 67, 54);
+  border: 1px rgb(186, 0, 13) solid;
+  z-index: 10;
+}
+#mainPage i {
+  top: 10px;
+}
+#sectionTwo{
+  background: rgb(255, 167, 38);
+  border: 1px rgb(199, 120, 0) solid;
+  top: -30px;
+  z-index: 9;
+}
+#sectionThree{
+  background: rgb(255, 235, 59);
+  border: 1px rgb(200, 185, 0) solid;
+  top: -60px;
+  z-index: 8;
+}
+#sectionFour{
+  background: rgb(0, 200, 83);
+  border: 1px rgb(0, 150, 36) solid;
+  top: -90px;
+  z-index: 7;
+}
+#sectionFive{
+  background: rgb(33, 150, 243);
+  border: 1px rgb(0, 105, 192) solid;
+  top: -120px;
+  z-index: 6;
+}
+#sectionSix{
+  background: rgb(94, 53, 177);
+  border: 1px rgb(40, 6, 128) solid;
+  top: -150px;
+  z-index: 5;
+}
+#sectionSeven{
+  background: rgb(156, 39, 176);
+  border: 1px rgb(106, 0, 128) solid;
+  top: -180px;
+  z-index: 4;
+}
+.navOverlay{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-radius: 0 3px 30px 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+  transition-timing-function: linear;
+}
+
+.shine{
+  background: radial-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.63));
+
+}
+nav a:active .navOverlay{
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(33, 33, 33, 0.11));
+}
+
+.helpOverlay{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.16);
+  z-index: -999;
+  opacity: 0;
+}
+
+/*------------------WATER---------------------------*/
+
+.water{
+  height: 100vh;
+  width: 100%;
+  z-index: -100;
+  position: absolute;
+}
+.lineWater{
+  background-color: #005cb2;
+  width: 100%;
+  height: 20px;
+}
+.nameWater{
+  text-align: center;
+  width: 100%;
+  background-color: rgb(33, 150, 243);
+  margin: 0 auto 30px;
+  color: white;
+  height: 70px;
+  padding: 10px 0 0;
+}
+.nameWater h1{
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+.overlayWater{
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 102, 179, 0.2), rgba(0, 102, 179, 0.02), rgba(0, 102, 179, 0));
+  position: absolute;
+  z-index: -15;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.addWater{
+  height: 450px;
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-left: 50px;
+}
+.containerWater{
+  display: flex;
+  justify-content: space-evenly;
+}
+.tip{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  left:0;
+  top:0;
+}
+.tipWater{
+  color: rgb(33, 150, 243);
+}
+.tips{
+  height: 80px;
+  width: 400px;
+  position: absolute;
+  bottom: 30px;
+  margin: 10px 37%;
+  background-color: white;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+}
+
+.tipActive{
+  opacity: 1;
+}
+
+.addWat{
+  height: 110px;
+  width: 110px;
+
+}
+.addWater button{
+  background-color: rgb(33, 150, 243);
+  font-size: 30px;
+  border: none;
+  border-radius: 1px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: white;
+  outline: none;
+}
+.water button:hover{
+  background-color: rgb(0, 105, 192);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.addSpecific{
+  height: 90px;
+  width: 240px;
+}
+
+.groupWater{
+  position:relative;
+  height: 60px;
+  width: 210px;
+}
+.inputWater{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:240px;
+  border:none;
+  border-bottom:1px solid #757575;
+  background-color: transparent;
+
+}
+
+#labelWaterInput{
+  color:#999;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+  z-index: 9999;
+}
+input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+  z-index: 9999;
+
+}
+
+.barWater{
+  position:relative; display:block; width:240px;
+}
+.barWater:before, .barWater:after{
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#5264AE;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.barWater:before{
+  left:50%;
+}
+.barWater:after{
+  right:50%;
+}
+
+.inputWater:focus ~ .barWater:before, .inputWater:focus ~ .barWater:after {
+  width:50%;
+}
+
+@-webkit-keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+
+
+.helpWater button{
+  height: 80px;
+  width: 80px;
+  background-color: rgb(33, 150, 243);
+  border: none;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 50px;
+  right: 60px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: rgba(14, 14, 14, 0.5);
+  font-size: 50px;
+  outline: none;
+}
+
+
+#barwaterld .ldBar-label{
+  display: none;
+}
+
+#barwaterhumanld .ldBar-label{
+  font-size: 60px;
+
+}
+.barsuccess{
+  background-color: gold;
+}
+
+.historyWater{
+  transition: all 0.3s;
+}
+
+.historyWater a{
+  height: 100%;
+  text-decoration: none;
+  color: rgba(33, 150, 243, 0.49);
+  position: absolute;
+  font-size: 40px;
+  right: 0;
+  top: 0;
+  padding: 21% 20px;
+  transition: all 0.3s;
+  background: linear-gradient(to right, rgba(33, 150, 243, 0), rgba(33, 150, 243, 0), rgba(33, 150, 243, 0))
+
+}
+.historyWater a:hover{
+  color: rgb(33, 150, 243);
+  background: linear-gradient(to right, rgba(33, 150, 243, 0), rgba(33, 150, 243, 0.05), rgba(33, 150, 243, 0.15))
+}
+.helpSign{
+  height: 300px;
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.92);
+  position: relative;
+  top: 25%;
+  margin: auto;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.helpWaterSign h3{
+  margin: 20px auto;
+}
+
+.successOverlay{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -999;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.waterSuccessSign{
+  height: 130px;
+  width: 330px;
+  position: relative;
+  margin: auto;
+  top: 12%;
+  background-color: rgba(255, 255, 255, 0.89);
+  color: gold;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(255, 215, 0, 0.12), 0 1px 2px rgba(255, 215, 0, 0.24);
+}
+.waterSuccessSign h3{
+  margin: 15px;
+}
+.helpActive{
+  z-index: 999999;
+  opacity: 1;
+}
+/* --------------------------------------------------------------OVERLAYS----------------------------------------------------------*/
+.overlayFood{
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 166, 94, 0.2), rgba(0, 166, 94, 0.02), rgba(0, 166, 94, 0));
+  position: absolute;
+  z-index: -15;
+}
+.overlayHealth{
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(92, 46, 145, 0.2), rgba(92, 46, 145, 0.02), rgba(92, 46, 145, 0));
+  position: absolute;
+  z-index: -15;
+}
+.overlayNote{
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 107, 0.2), rgba(255, 255, 107, 0.02), rgba(255, 213, 3, 0));
+  position: absolute;
+  z-index: -15;
+}
+.overlaySettings{
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(163, 19, 142, 0.2), rgba(163, 19, 142, 0.02), rgba(163, 19, 142, 0));
+  position: absolute;
+  z-index: -15;
+}
+.overlayTraining{
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(250, 166, 26, 0.2), rgba(250, 166, 26, 0.02), rgba(250, 166, 26, 0));
+  position: absolute;
+  z-index: -15;
+}
+.overlayDashboard{
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(244, 67, 54, 0.2), rgba(244, 67, 54, 0.02), rgba(244, 67, 54, 0));
+  position: absolute;
+  z-index: -15;
+}
+
+/*------------------NOTE---------------------------*/
+.note .container{
+  margin: 20px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.note .container div{
+  height: 280px;
+  width: 24%;
+  margin: 5px auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.note .container div:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.note h3{
+  padding: 10px;
+  width: 100%;
+  font-size: 20px;
+  background-color: rgb(253, 216, 53);
+  text-align: center;
+  margin: 0;
+}
+
+.lineNote{
+  background-color: #c6a700;
+  width: 100%;
+  height: 20px;
+  z-index: 15;
+}
+.nameNote{
+  text-align: center;
+  width: 100%;
+  background-color: #fdd835;
+  color: black;
+  height: 70px;
+  padding: 10px 0 0;
+  z-index: 15;
+}
+.nameNote h1{
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+
+
+.note textarea{
+  height: 85%;
+  width: 100%;
+  border: none;
+  background-color: rgb(247, 247, 247);
+  padding: 20px;
+  outline: none;
+  font-size: 20px;
+  resize: none;
+
+}
+.helpNote button{
+  height: 80px;
+  width: 80px;
+  background-color: rgb(253, 216, 53);
+  border: none;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 50px;
+  right: 60px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: rgba(14, 14, 14, 0.5);
+  font-size: 50px;
+  outline: none;
+}
+
+.note button:hover{
+  background-color: #c79100;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.headline{
+  z-index: 1000;
+}
+
+.helpNoteSign{
+  height: 300px;
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.89);
+  position: relative;
+  top: 25%;
+  margin: auto;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.helpNoteSign h3{
+  margin: 20px auto;
+}
+/*-----------------------------------HEALTH (Sleep)-------------------*/
+
+.lineHealth{
+  background-color: rgb(40, 6, 128);
+  width: 100%;
+  height: 20px;
+}
+.nameHealth{
+  text-align: center;
+  width: 100%;
+  background-color: rgb(94, 53, 177);
+  color: white;
+  height: 70px;
+  padding: 10px 0 0;
+}
+.nameHealth h1{
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+.health h3{
+  padding: 10px;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.star{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.star input{
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+}
+.health button{
+  height: 70px;
+  width: 180px;
+  background-color: #7953d2;
+  font-size: 30px;
+  border: none;
+  border-radius: 1px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: white;
+  outline: none;
+  margin-top: 10px;
+}
+.health textarea{
+  height: 200px;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  outline: none;
+  font-size: 20px;
+  resize: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  border: 1px rgba(121, 83, 210, 0.3) solid;
+  overflow:hidden;
+  color: #7953d2;
+}
+.carr{
+  background-color: white;
+  color: #7953d2;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin: 13px 0;
+}
+.carr:hover{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.sleep{
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 140px;
+  border-radius: 2px;
+}
+.inputs{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+.inputs input{
+  height: 40px;
+  width: 110px;
+  display: inline-block;
+  border: none;
+  border-bottom: 2px rgba(121, 83, 210, 0.3) solid;
+  -ms-box-sizing:content-box;
+  -moz-box-sizing:content-box;
+  -webkit-box-sizing:content-box;
+  box-sizing:content-box;
+  padding: 0;
+}
+
+.inputs select{
+  height: 40px;
+  width: 50px;
+  display: inline-block;
+  -ms-box-sizing:content-box;
+  -moz-box-sizing:content-box;
+  -webkit-box-sizing:content-box;
+  box-sizing:content-box;
+  border: none;
+}
+.health span{
+  position: relative;
+  top: -10px;
+  left: -3px;
+  font-size: 40px;
+}
+.helpHealth button{
+  height: 80px;
+  width: 80px;
+  background-color: #7953d2;
+  border: none;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 50px;
+  right: 60px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: rgba(14, 14, 14, 0.5);
+  font-size: 50px;
+  outline: none;
+}
+
+.health button:hover{
+  background-color: #4d2c91;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+/*-----------------------------------FOOD (nutrition)-------------------*/
+
+
+.lineFood{
+  background-color: #009624;
+  width: 100%;
+  height: 20px;
+}
+.nameFood{
+  text-align: center;
+  width: 100%;
+  background-color: #00c853;
+  color: black;
+  height: 70px;
+  padding: 10px 0 0;
+}
+.nameFood h1{
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+.food h3{
+  padding: 5px;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.food .container .row .col{
+  margin: 20px;
+  height: 430px;
+  /*border: 1px black solid;*/
+  padding: 30px;
+}
+
+.barsFood{
+  transform:rotate(-90deg);
+  display: flex;
+  flex-wrap: wrap;
+  height: 445px;
+  padding-top: 10px;
+}
+.barsFood div{
+  height: 24%;
+}
+.barsFood .ldBar-label{
+  display: none;
+}
+
+.barsFoodNames{
+  position: relative;
+  top: -25px;
+}
+.barsFoodNames div{
+  display: inline-block;
+  width: 24%;
+  text-align: center;
+  font-size: 15px;
+}
+.dishes{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.dishes button{
+  height: 180px;
+  width: 180px;
+  background-color: #00c853;
+  margin: 10px;
+  border: none;
+  outline: none;
+  text-align: left;
+  font-size: 25px;
+  padding-left: 30px;
+}
+.food button:active{
+  background-color: #009624;
+}
+.helpFood button{
+  height: 80px;
+  width: 80px;
+  background-color: #00c853;
+  border: none;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 50px;
+  right: 60px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: rgba(14, 14, 14, 0.5);
+  font-size: 50px;
+  outline: none;
+}
+
+.food button:hover{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+.tipFood{
+  color: #00c853;
+}
+/*-----------------------------------TRAINING-------------------*/
+.lineTraining{
+  background-color: #c68400;
+  width: 100%;
+  height: 20px;
+  z-index: -5;
+}
+.nameTraining{
+  text-align: center;
+  width: 100%;
+  background-color: #ffb300;
+  color: black;
+  height: 70px;
+  padding: 10px 0 0;
+  z-index: -5;
+}
+.nameTraining h1{
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+.training h3{
+  padding: 10px;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+}
+.tipTraining{
+  color: #ffb300;
+}
+.buttonTr button{
+  height: 170px;
+  width: 170px;
+  /*margin: 20px 20px;*/
+  background-color: #ffb300;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  color: black;
+  font-size: 25px;
+  text-align: center;
+  outline: none;
+  margin-top: 90%;
+
+}
+.zone{
+  width: 100%;
+  opacity: 0.3;
+}
+.arms{
+  height: 25%;
+  background-color: greenyellow;
+}
+.back{
+  height: 35%;
+  background-color: indianred;
+}
+.core{
+  position: absolute;
+  top: 60px;
+  left: 35%;
+  height: 240px;
+  width: 120px;
+  background-color: yellow;
+}
+.legs{
+  height: 40%;
+  background-color: cornflowerblue;
+}
+/*.training .container{*/
+  /*margin: 20px auto 0;*/
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  /*justify-content: space-evenly;*/
+/*}*/
+
+
+/*.training .container div div{*/
+  /*height: 220px;*/
+  /*width: 220px;*/
+  /*margin: 20px 20px;*/
+  /*background-color: #ffb300;*/
+  /*box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);*/
+  /*color: #717171;*/
+  /*font-size: 40px;*/
+  /*text-align: center;*/
+  /*padding-top: 80px;*/
+  /*outline: none;*/
+/*}*/
+/*.training .container div div:hover {*/
+  /*box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
+/*}*/
+/*.training .container div a{*/
+  /*height: 100%;*/
+  /*width: 100%;*/
+  /*text-decoration: none;*/
+/*}*/
+
+.training .container{
+  margin-top: 30px;
+}
+
+.training .body{
+  height: 450px;
+  background-color: salmon;
+}
+
+/*.training .buttons{*/
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  /*justify-content: space-evenly;*/
+/*}*/
+
+/*.training .buttons button{*/
+  /*height: 130px;*/
+  /*width: 130px;*/
+  /*background-color: #ffb300;*/
+  /*margin: 10px;*/
+  /*border: none;*/
+  /*outline: none;*/
+  /*text-align: left;*/
+  /*font-size: 25px;*/
+  /*padding-left: 20px;*/
+/*}*/
+
+.helpTraining button{
+  height: 80px;
+  width: 80px;
+  background-color: #ffb300;
+  border: none;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 50px;
+  right: 60px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: rgba(14, 14, 14, 0.5);
+  font-size: 50px;
+  outline: none;
+}
+.training button:hover{
+  background-color: #c79100;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+/*--------------------------DASHBOARD-------------------------------------*/
+
+.lineDashboard{
+  background-color: rgb(186, 0, 13);
+  width: 100%;
+  height: 20px;
+  z-index: -5;
+}
+.nameDashboard{
+  text-align: center;
+  width: 100%;
+  background-color: rgb(244, 67, 54);
+  color: black;
+  height: 70px;
+  padding: 10px 0 0;
+  z-index: -5;
+}
+.nameDashboard h1{
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+.dashboard h3{
+  padding: 10px;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+}
+
+.dashb{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 150px;
+  height: 250px;
+}
+.dashb a{
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+.dashb div{
+  height: 190px;
+  width: 190px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  text-align: center;
+  /*padding-top: 20px;*/
+}
+.dashb .dash:hover{
+  margin-left: 15px;
+  margin-right: 15px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.dashb div h3{
+font-size: 25px;
+}
+.dashb i{
+  position: relative;
+  bottom: 0;
+}
+#dashTr{
+  background-color: rgba(255, 179, 0, 0.06);
+  border: 1px #ffb300 solid;
+}
+#dashTr a{
+  color: #ffb300;
+}
+
+#dashNote{
+  background-color: rgba(255, 235, 59, 0.05);
+  border: 1px rgb(200, 205, 40) solid;
+}
+#dashNote a{
+  color: rgb(200, 205, 40);
+}
+#dashFood{
+  background-color: rgba(0, 200, 83, 0.06);
+  border: 1px rgb(0, 200, 83) solid;
+}
+#dashFood a{
+  color: rgb(0, 200, 83);
+}
+#dashWat{
+  background-color: rgba(33, 150, 243, 0.05);
+  border: 1px rgb(33, 150, 243) solid;
+}
+#dashWat a{
+  color: rgb(33, 150, 243);
+}
+#dashSleep{
+  background-color: rgba(94, 53, 177, 0.06);
+  border: 1px rgb(94, 53, 177) solid;
+}
+#dashSleep a{
+  color: rgb(94, 53, 177);
+}
