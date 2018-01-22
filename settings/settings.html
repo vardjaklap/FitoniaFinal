@@ -17,5 +17,58 @@
 <div class="settings">
     <div class="overlaySettings">
 
+        <div class="headline">
+            <div class="lineTraining"></div>
+            <div class = "nameTraining"><i class="material-icons md-48">fitness_center</i><h1>Training</h1></div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-12 col-md-3 buttonTr">
+                    <button>Cardio</button>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="body">
+                    <div class="bodyPic"><img src="./training/img/1.png" alt="" id="bodbase">
+                        <div class="bod" id="bodleg"> <img src="./training/img/2.png" alt=""></div>
+                        <div  class="bod" id="bodcore"><img src="./training/img/3.png" alt=""></div>
+                        <div class="bod" id="bodback"><img src="./training/img/4.png" alt=""></div>
+                        <div class="bod" id="bodarms"><img src="./training/img/5.png" alt=""></div></div>
+                    <div class="zone arms" ng-mouseenter="addArms()" ng-mouseleave="removeArms()"></div>
+                    <div class="zone back" ng-mouseenter="addBack()" ng-mouseleave="removeBack()"></div>
+                    <div class="zone core" ng-mouseenter="addCore()" ng-mouseleave="removeCore()"></div>
+                    <div class="zone legs" ng-mouseenter="addLegs()" ng-mouseleave="removeLegs()"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 buttonTr">
+                    <button>Stretching</button>
+                </div>
+
+            </div>
+            <div class="row justify-content-md-center">
+
+                    <div class="col-12 tips" >
+                        <div id="tipOne" class="tip tipTraining tipActive">
+                            <h3>Tip</h3>
+                            <p>Try drinking pure water instead of tea or coffee.</p>
+                        </div>
+                        <div id="tipTwo" class="tip tipTraining">
+                            <h3>Did you know...</h3>
+                            <p>The chemical formula for water is H2O?</p>
+                        </div>
+                        <div id="tipThree" class="tip tipTraining">
+                            <h3>Tip</h3>
+                            <p>While hydrated, your skin looks radiant!</p>
+                        </div>
+                        <div id="tipFour" class="tip tipTraining">
+                            <h3>Fact:</h3>
+                            <p>Water helps you lose weight!</p>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+
+
+
     </div>
 </div>

@@ -21,6 +21,30 @@ angular.module('myApp.training', ['ngRoute'])
             }
         };
 
+            $scope.addArms = function(){
+                $('#bodarms').addClass('activeBod');
+            };
+            $scope.removeArms = function(){
+             $('#bodarms').removeClass('activeBod');
+            };
+        $scope.addLegs = function(){
+            $('#bodleg').addClass('activeBod');
+        };
+        $scope.removeLegs = function(){
+            $('#bodleg').removeClass('activeBod');
+        };
+        $scope.addBack = function(){
+            $('#bodback').addClass('activeBod');
+        };
+        $scope.removeBack = function(){
+            $('#bodback').removeClass('activeBod');
+        };
+        $scope.addCore = function(){
+            $('#bodcore').addClass('activeBod');
+        };
+        $scope.removeCore = function(){
+            $('#bodcore').removeClass('activeBod');
+        };
 
         var canvas = document.querySelector('.snowTraining'),
             ctx = canvas.getContext('2d'),

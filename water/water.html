@@ -28,9 +28,10 @@
 
             <div class = "middle">
 
-                <div class="container containerWater">
-                    <div class="human">
-                        <div id="barwaterhumanld" data-type="fill" data-fill="data:ldbar/res,bubble(#2196f3,#fff,50,1)" data-path="M1323.43,601.8c-0.29,6.74,0.73,19.34,0.73,21.83s-6.3,12.11-7.57,13.87c-1.27,1.76-4.88,0.49-4.59-2.44
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-12"><div class="human">
+                            <div id="barwaterhumanld" data-type="fill" data-fill="data:ldbar/res,bubble(#2196f3,#fff,50,1)" data-path="M1323.43,601.8c-0.29,6.74,0.73,19.34,0.73,21.83s-6.3,12.11-7.57,13.87c-1.27,1.76-4.88,0.49-4.59-2.44
 	c0,0-1.58,1.73-2.86,3.24s-6.23-0.2-5.57-3.06c0,0-0.29,0.44-1.17,1.36c-0.88,0.92-6.85,0.29-6.12-4.07c0,0-4.47,3.11-6.74-0.73
 	c0,0-1.06,3.3-3.81,3.59s-0.92-3.7-2.09-6.41s-3-3.44-1.17-7.25c1.83-3.81,2.78-5.86,4.47-8.86s8.42-7.47,11.57-10.55
 	c3.15-3.08,6.06-14.04,3.13-22.34c-2.93-8.3-5.76-17.73-7.23-25.05c-1.47-7.33-3.22-10.4-8.64-11.87
@@ -62,27 +63,32 @@
 	c0.15,10.84-2.05,24.18-2.05,24.18s4.54-1.17,4.54,1.17s-1.25,12.09-3.22,14.8c-1.98,2.71-5.2,3.08-5.2,3.08s-2.56,16.34-2.56,19.27
 	s16.12,10.62,22.12,13.99c6.01,3.37,8.2,3.52,13.04,2.93s16.56-2.15,23.98,3.71c7.42,5.86,15.43,11.92,18.36,17.29
 	c2.93,5.37,1.76,10.35,8.2,14.75s14.07,9.77,19.73,18.17c5.66,8.4,11.92,10.4,14.99,16.85c3.08,6.45,5.71,9.96,6.59,14.65
-	c0.88,4.69,4.84,16.56,1.76,27.84S1323.72,595.06,1323.43,601.8z" class="label-center" style="width:350px;height:350px; position: absolute; top: 170px; left: 320px;"></div>
+	c0.88,4.69,4.84,16.56,1.76,27.84S1323.72,595.06,1323.43,601.8z" class="label-center" style="height: 350px; position: absolute;left: 70px; top: 50px"></div>
 
-                        <div id="barwaterld" data-preset="circle" style="width:450px;height:450px; position: absolute; left: 270px" data-stroke="rgb(33, 150, 243)" data-stroke-width="2"></div>
+                            <div id="barwaterld" data-preset="circle" style="height: 450px; width: 450px; position: absolute; left: 0; top: 10px" data-stroke="rgb(33, 150, 243)" data-stroke-width="2"></div>
 
 
 
-                    </div>
-                    <div class="addWater">
-                        <button class="addWat" ng-click="add()" ng-mouseenter="changetip()"><span>100ml</span></button>
-                        <button class="addWat" ng-click="add250()"><span>250ml</span></button>
-                        <button class="addWat" ng-click="add500()"><span>500ml</span></button>
-                        <button class="addWat" ng-click="add1000()"><span>1l</span></button>
-                        <div class="groupWater">
-                            <input id="mili" type="number" class="inputWater" required>
-                            <span class="barWaterInput"></span>
-                            <label id="labelWaterInput">ml</label>
-                        </div>
-                        <button class = "addSpecific" ng-click="addml()"><span>Add ml</span></button>
-                    </div>
+                        </div></div>
+                        <div class="col-md-4 col-12"><div class="addWater">
+                            <button class="addWat" ng-click="add()"><span>100ml</span></button>
+                            <button class="addWat" ng-click="add250()"><span>250ml</span></button>
+                            <button class="addWat" ng-click="add500()"><span>500ml</span></button>
+                            <button class="addWat" ng-click="add1000()"><span>1l</span></button>
+                            <div class="groupWater">
+                                <input id="mili" type="number" class="inputWater" required>
+                                <span class="barWaterInput"></span>
+                                <label id="labelWaterInput">ml</label>
+                            </div>
+                            <button class = "addSpecific" ng-click="addml()"><span>Add ml</span></button>
+                        </div></div>
+                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
             <div>
                 <div class="tips" >
                     <div id="tipOne" class="tip tipWater">
@@ -103,13 +109,9 @@
                     </div>
                 </div>
             </div>
-            <div class="historyWater"><a href="">History  ></a></div>
+            <!--<div class="historyWater"><a href="">History  ></a></div>-->
             <div class="helpWater"><button ng-click="showHelp()">?</button></div>
 
-
-        </div>
-    </div>
-</div>
 
 
 <div id="helpWaterPage" class="helpOverlay" ng-click="hideHelp()">

@@ -22,83 +22,54 @@
             <div class = "nameTraining"><i class="material-icons md-48">fitness_center</i><h1>Training</h1></div>
         </div>
         <div class="container">
-
-                <!--<div id="biceps"><a href="#!/biceps"><div>biceps</div></a></div>-->
-                <!--<div id="triceps"><a href="#!/triceps"><div>triceps</div></a></div>-->
-                <!--<div id="chest"><a href="#!/chest"><div>chest</div></a></div>-->
-                <!--<div id="back"><a href="#!/back"><div>back</div></a></div>-->
-                <!--<div id="abs"><a href="#!/abs"><div>abs</div></a></div>-->
-                <!--<div id="legs"><a href="#!/legs"><div>legs</div></a></div>-->
-                <!--<div id="cardio"><a href="#!/cardio"><div>cardio</div></a></div>-->
-                <!--<div id="stretch"><a href="#!/stretch"><div>stretch</div></a></div>-->
                 <div class="row justify-content-md-center">
-                    <div class="col-2 buttonTr">
+                    <div class="col-12 col-md-3 buttonTr">
                         <button>Cardio</button>
                     </div>
-                    <div class="col-1"></div>
-                    <div class="col-4 body">
-                        <div class="zone arms"></div>
-                        <div class="zone back"></div>
-                        <div class="zone core"></div>
-                        <div class="zone legs"></div>
+                    <div class="col-12 col-md-4 body">
+                        <div class="bodyPic"><img src="./training/img/1.png" alt="" id="bodbase">
+                            <div class="bod" id="bodleg"> <img src="./training/img/2.png" alt=""></div>
+                            <div  class="bod" id="bodcore"><img src="./training/img/3.png" alt=""></div>
+                            <div class="bod" id="bodback"><img src="./training/img/4.png" alt=""></div>
+                            <div class="bod" id="bodarms"><img src="./training/img/5.png" alt=""></div></div>
+
+                        <div class="zone arms" ng-mouseenter="addArms()" ng-mouseleave="removeArms()"></div>
+                        <div class="zone back" ng-mouseenter="addBack()" ng-mouseleave="removeBack()"></div>
+                        <div class="zone core" ng-mouseenter="addCore()" ng-mouseleave="removeCore()"></div>
+                        <div class="zone legs" ng-mouseenter="addLegs()" ng-mouseleave="removeLegs()"></div>
 
                     </div>
-                    <div class="col-1"></div>
-                    <div class="col-2 buttonTr">
+                    <div class="col-12 col-md-3 buttonTr">
                         <button>Stretching</button>
                     </div>
-                    <!--<div class="col-7">-->
-                        <!--<div></div>-->
-                        <!--<div></div>-->
-                        <!--<div></div>-->
-                        <!--<div></div>-->
-                        <!--<div></div>-->
-                        <!--<div></div>-->
-                    <!--</div>-->
 
-                    <!--<div class="col-5 buttons">-->
-                        <!--<div>-->
-                            <!--<button>Arms</button>-->
-                        <!--</div>-->
-                        <!--<div>-->
-                            <!--<button>Back</button>-->
-                        <!--</div>-->
-                        <!--<div>-->
-                            <!--<button>Legs</button>-->
-                        <!--</div>-->
-                        <!--<div>-->
-                            <!--<button>Core</button>-->
-                        <!--</div>-->
-                        <!--<div>-->
-                            <!--<button>Cardio</button>-->
-                        <!--</div>-->
-                        <!--<div>-->
-                            <!--<button>Stretching</button>-->
-                        <!--</div>-->
-                    <!--</div>-->
                 </div>
-        </div>
-        <div>
-            <div class="tips" >
-                <div id="tipOne" class="tip tipTraining tipActive">
-                    <h3>Tip</h3>
-                    <p>Try drinking pure water instead of tea or coffee.</p>
+            <div class="row">
+                <div class="col-12">
+                <div class="tips" >
+                    <div id="tipOne" class="tip tipTraining tipActive">
+                        <h3>Tip</h3>
+                        <p>Try drinking pure water instead of tea or coffee.</p>
+                    </div>
+                    <div id="tipTwo" class="tip tipTraining">
+                        <h3>Did you know...</h3>
+                        <p>The chemical formula for water is H2O?</p>
+                    </div>
+                    <div id="tipThree" class="tip tipTraining">
+                        <h3>Tip</h3>
+                        <p>While hydrated, your skin looks radiant!</p>
+                    </div>
+                    <div id="tipFour" class="tip tipTraining">
+                        <h3>Fact:</h3>
+                        <p>Water helps you lose weight!</p>
+                    </div>
                 </div>
-                <div id="tipTwo" class="tip tipTraining">
-                    <h3>Did you know...</h3>
-                    <p>The chemical formula for water is H2O?</p>
-                </div>
-                <div id="tipThree" class="tip tipTraining">
-                    <h3>Tip</h3>
-                    <p>While hydrated, your skin looks radiant!</p>
-                </div>
-                <div id="tipFour" class="tip tipTraining">
-                    <h3>Fact:</h3>
-                    <p>Water helps you lose weight!</p>
                 </div>
             </div>
         </div>
-        <div class="helpTraining"><button>?</button></div>
+
+
     </div>
 </div>
+<div class="helpTraining"><button>?</button></div>
 

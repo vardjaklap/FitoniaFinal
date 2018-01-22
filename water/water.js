@@ -3,21 +3,21 @@
 angular.module('myApp.water', ['ngRoute', 'ngAnimate'])
 
     .controller('WaterCtrl', ['$scope','$interval', '$timeout',function($scope, $interval, $timeout) {
-         $scope.menuCount = 1;
-        $scope.openMenu = function(){
-            $scope.menuCount += 1;
-            if($scope.menuCount%2 == 0){
-                $('#menu').addClass( "activeMenu", 4500, "easeOutBounce");
-                $('#menuBut1').addClass( "menubar1", 4500, "easeOutBounce");
-                $('#menuBut2').addClass( "menubar2", 4500, "easeOutBounce");
-                $('#menuBut3').addClass( "menubar3", 4500, "easeOutBounce");
-            }else{
-                $('#menu').removeClass( "activeMenu", 1000, "easeOutBounce");
-                $('#menuBut1').removeClass( "menubar1", 4500, "easeOutBounce");
-                $('#menuBut2').removeClass( "menubar2", 4500, "easeOutBounce");
-                $('#menuBut3').removeClass( "menubar3", 4500, "easeOutBounce");
-            }
-        };
+        //  $scope.menuCount = 1;
+        // $scope.openMenu = function(){
+        //     $scope.menuCount += 1;
+        //     if($scope.menuCount%2 == 0){
+        //         $('#menu').addClass( "activeMenu", 4500, "easeOutBounce");
+        //         $('#menuBut1').addClass( "menubar1", 4500, "easeOutBounce");
+        //         $('#menuBut2').addClass( "menubar2", 4500, "easeOutBounce");
+        //         $('#menuBut3').addClass( "menubar3", 4500, "easeOutBounce");
+        //     }else{
+        //         $('#menu').removeClass( "activeMenu", 1000, "easeOutBounce");
+        //         $('#menuBut1').removeClass( "menubar1", 4500, "easeOutBounce");
+        //         $('#menuBut2').removeClass( "menubar2", 4500, "easeOutBounce");
+        //         $('#menuBut3').removeClass( "menubar3", 4500, "easeOutBounce");
+        //     }
+        // };
 
         $scope.progressWater = 0;
         $scope.add = function(){
@@ -93,31 +93,7 @@ angular.module('myApp.water', ['ngRoute', 'ngAnimate'])
 
             }
         }
-        // $interval(tipOne, 5000);
-        // $interval(tipTwo, 10000);
-        // $interval(tipThree, 15000);
-        // $interval(tipFour, 5000);
-        // $timeout($scope.tipOne, 2500);
-        // $scope.tipOne = function(){
-        //     $('#tipOne').addClass( "tipActive", 500, "easeOutBounce");
-        //     $('#tipFour').removeClass( "tipActive", 2000, "easeOutBounce");
-        //     $timeout(tipTwo, 2500);
-        //     console.log('lalala')
-        // };
-        // var tipTwo = function(){
-        //     $('#tipTwo').addClass( "tipActive", 500, "easeOutBounce");
-        //             $('#tipOne').removeClass( "tipActive", 2000, "easeOutBounce");
-        //     $timeout(tipThree, 2500);
-        // };
-        // var tipThree = function(){
-        //     $('#tipThree').addClass( "tipActive", 1000, "easeOutBounce");
-        //             $('#tipTwo').removeClass( "tipActive", 1000, "easeOutBounce");
-        //     $timeout(tipFour, 2500);
-        // };
-        // var tipFour = function(){
-        //     $('#tipFour').addClass( "tipActive", 1000, "easeOutBounce");
-        //             $('#tipThree').removeClass( "tipActive", 1000, "easeOutBounce");
-        // };
+
 
 
 

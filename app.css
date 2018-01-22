@@ -31,7 +31,7 @@
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
-  overflow:hidden;
+  /*overflow:hidden;*/
 }
 h1, h3{
   font-family: 'Roboto Slab', serif;
@@ -96,10 +96,6 @@ nav i{
 }
 .wrapMenu{
   height: 0;
-}
-.activeMenu{
-  transition: all 0.7s;
-  height: 740px;
 }
 
 #mainPage{
@@ -168,9 +164,10 @@ nav a:active .navOverlay{
 }
 
 .helpOverlay{
-  height: 100%;
+  height: 100vh;
   width: 100%;
-  position: absolute;
+  position: fixed;
+  top: 0;
   background-color: rgba(0, 0, 0, 0.16);
   z-index: -999;
   opacity: 0;
@@ -203,7 +200,7 @@ nav a:active .navOverlay{
   margin-bottom: 0;
 }
 .overlayWater{
-  height: 100vh;
+  height: 50vh;
   width: 100%;
   background: linear-gradient(to bottom, rgba(0, 102, 179, 0.2), rgba(0, 102, 179, 0.02), rgba(0, 102, 179, 0));
   position: absolute;
@@ -223,9 +220,10 @@ nav a:active .navOverlay{
   justify-content: space-evenly;
   padding-left: 50px;
 }
-.containerWater{
+.water .container .row{
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 .tip{
   height: 100%;
@@ -246,13 +244,14 @@ nav a:active .navOverlay{
 .tips{
   height: 80px;
   width: 400px;
-  position: absolute;
-  bottom: 30px;
-  margin: 10px 37%;
+  position: fixed;
+  bottom: 15px;
+  margin: 10px auto;
+  left: 0;
+  right: 0;
   background-color: white;
   border: none;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-
 }
 
 .tipActive{
@@ -366,7 +365,7 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
   background-color: rgb(33, 150, 243);
   border: none;
   border-radius: 50px;
-  position: absolute;
+  position: fixed;
   bottom: 50px;
   right: 60px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -428,6 +427,7 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
   height: 100%;
   width: 100%;
   position: absolute;
+  top: 0;
   z-index: -999;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.1);
@@ -450,6 +450,9 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
 .helpActive{
   z-index: 999999;
   opacity: 1;
+}
+.water .human{
+  height: 500px;
 }
 /* --------------------------------------------------------------OVERLAYS----------------------------------------------------------*/
 .overlayFood{
@@ -503,14 +506,14 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
   justify-content: space-evenly;
 }
 
-.note .container div{
+.note .container .onenote{
   height: 280px;
-  width: 24%;
+  width: 100%;
   margin: 5px auto;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-.note .container div:hover {
+.note .container .onenote:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 .note h3{
@@ -560,16 +563,16 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
   background-color: rgb(253, 216, 53);
   border: none;
   border-radius: 50px;
-  position: absolute;
-  bottom: 50px;
-  right: 60px;
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   color: rgba(14, 14, 14, 0.5);
   font-size: 50px;
   outline: none;
 }
 
-.note button:hover{
+.helpNote button:hover{
   background-color: #c79100;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
@@ -579,8 +582,8 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
 }
 
 .helpNoteSign{
-  height: 300px;
-  width: 500px;
+  height: 200px;
+  width: 300px;
   background-color: rgba(255, 255, 255, 0.89);
   position: relative;
   top: 25%;
@@ -591,6 +594,10 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
 }
 .helpNoteSign h3{
   margin: 20px auto;
+}
+
+canvas{
+  overflow-x: hidden;
 }
 /*-----------------------------------HEALTH (Sleep)-------------------*/
 
@@ -855,10 +862,12 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
 .tipTraining{
   color: #ffb300;
 }
+.buttonTr{
+  margin:10px;
+}
 .buttonTr button{
   height: 170px;
   width: 170px;
-  /*margin: 20px 20px;*/
   background-color: #ffb300;
   border: none;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -866,89 +875,65 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
   font-size: 25px;
   text-align: center;
   outline: none;
-  margin-top: 90%;
+  margin: 20% auto;
+}
+
+.bodyPic{
+  margin: 0 5%;
+}
+.bodyPic img{
+    height: 500px;
+    z-index: 9;
+    position: absolute;
+
 
 }
 .zone{
   width: 100%;
-  opacity: 0.3;
 }
 .arms{
-  height: 25%;
-  background-color: greenyellow;
+  height: 26%;
+    position: relative;
+    z-index: 99;
 }
 .back{
-  height: 35%;
-  background-color: indianred;
+  height: 28%;
+    position: relative;
+    z-index: 99;
 }
 .core{
   position: absolute;
-  top: 60px;
-  left: 35%;
-  height: 240px;
-  width: 120px;
-  background-color: yellow;
+  top: 140px;
+  left: 38%;
+  height: 130px;
+  width: 85px;
+
+    z-index: 999;
 }
 .legs{
-  height: 40%;
-  background-color: cornflowerblue;
+  height: 46%;
+    position: relative;
+    z-index: 999;
 }
-/*.training .container{*/
-  /*margin: 20px auto 0;*/
-  /*display: flex;*/
-  /*flex-wrap: wrap;*/
-  /*justify-content: space-evenly;*/
-/*}*/
 
 
-/*.training .container div div{*/
-  /*height: 220px;*/
-  /*width: 220px;*/
-  /*margin: 20px 20px;*/
-  /*background-color: #ffb300;*/
-  /*box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);*/
-  /*color: #717171;*/
-  /*font-size: 40px;*/
-  /*text-align: center;*/
-  /*padding-top: 80px;*/
-  /*outline: none;*/
-/*}*/
-/*.training .container div div:hover {*/
-  /*box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
-/*}*/
-/*.training .container div a{*/
-  /*height: 100%;*/
-  /*width: 100%;*/
-  /*text-decoration: none;*/
-/*}*/
+.bod{
+  opacity: 0.5;
+  transition: all 0s;
+}
 
 .training .container{
   margin-top: 30px;
 }
 
 .training .body{
-  height: 450px;
-  background-color: salmon;
+    height: 500px;
+  margin: 0 auto;
 }
 
-/*.training .buttons{*/
-  /*display: flex;*/
-  /*flex-wrap: wrap;*/
-  /*justify-content: space-evenly;*/
-/*}*/
-
-/*.training .buttons button{*/
-  /*height: 130px;*/
-  /*width: 130px;*/
-  /*background-color: #ffb300;*/
-  /*margin: 10px;*/
-  /*border: none;*/
-  /*outline: none;*/
-  /*text-align: left;*/
-  /*font-size: 25px;*/
-  /*padding-left: 20px;*/
-/*}*/
-
+.activeBod{
+  opacity: 1;
+}
 .helpTraining button{
   height: 80px;
   width: 80px;
@@ -1000,24 +985,23 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
 .dashb{
   display: flex;
   justify-content: space-evenly;
-  margin-top: 150px;
   height: 250px;
+  margin-top: 10%;
 }
 .dashb a{
   height: 100%;
   width: 100%;
   text-decoration: none;
 }
-.dashb div{
+.dash{
   height: 190px;
   width: 190px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   text-align: center;
+  margin:10px;
   /*padding-top: 20px;*/
 }
-.dashb .dash:hover{
-  margin-left: 15px;
-  margin-right: 15px;
+.dash:hover{
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 .dashb div h3{
@@ -1026,6 +1010,13 @@ font-size: 25px;
 .dashb i{
   position: relative;
   bottom: 0;
+}
+.dashboard .col-md-2{
+  margin: 1%;
+}
+.train{
+  display: flex;
+  justify-content: space-evenly;
 }
 #dashTr{
   background-color: rgba(255, 179, 0, 0.06);
@@ -1063,3 +1054,4 @@ font-size: 25px;
 #dashSleep a{
   color: rgb(94, 53, 177);
 }
+

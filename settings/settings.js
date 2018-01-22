@@ -20,4 +20,5 @@ angular.module('myApp.settings', ['ngRoute'])
             $('#menuBut3').removeClass( "menubar3", 4500, "easeOutBounce");
         }
     };
+
 }]);
