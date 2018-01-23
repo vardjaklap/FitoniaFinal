@@ -57,6 +57,22 @@ h1, h3{
 .navigation a{
   z-index: 20;
 }
+.elem img{
+  position: relative;
+  top:12px;
+  left: 12px;
+  height: 50px;
+  width: 50px;
+  opacity: 0.5;
+}
+.logo{
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+  top:-5px;
+  height: 60px;
+  width: 60px;
+}
 #blocks{
   position: relative;
 }
@@ -270,7 +286,7 @@ background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(33, 33, 33, 0
   justify-content: space-evenly;
 }
 .addWater{
-  height: 450px;
+  /*height: 450px;*/
   width: 300px;
   display: flex;
   flex-wrap: wrap;
@@ -309,7 +325,7 @@ background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(33, 33, 33, 0
   background-color: white;
   border: none;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  z-index: 9999;
+  z-index: 800;
 }
 .tips p{
   margin-top: 5px;
@@ -325,6 +341,7 @@ background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(33, 33, 33, 0
 .addWat{
   height: 110px;
   width: 110px;
+  margin: 7px;
 
 }
 .addWater button{
@@ -348,16 +365,19 @@ background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(33, 33, 33, 0
 .addSpecific{
   height: 90px;
   width: 240px;
+  margin-bottom: 90px;
 }
 
 .groupWater{
   position:relative;
   height: 60px;
   width: 210px;
+  margin: 15px auto;
+  left: -10px;
 }
 .inputWater{
   font-size:18px;
-  padding:10px 10px 10px 5px;
+  padding:10px 10px 10px 0;
   display:block;
   width:240px;
   border:none;
@@ -440,6 +460,7 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
   color: rgba(14, 14, 14, 0.5);
   font-size: 50px;
   outline: none;
+  z-index: 9999;
 }
 
 
@@ -521,6 +542,8 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
 }
 .water .human{
   height: 500px;
+  position: relative;
+  left: -25px;
 }
 /* --------------------------------------------------------------OVERLAYS----------------------------------------------------------*/
 .overlayFood{
@@ -610,7 +633,7 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
 }
 
 
-.note textarea{
+textarea{
   height: 85%;
   width: 100%;
   border: none;
@@ -620,6 +643,9 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
   font-size: 20px;
   resize: none;
 
+}
+.activeDay{
+  background-color: #fff5a0;
 }
 .helpNote button{
   height: 80px;
@@ -663,6 +689,7 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
 canvas{
   overflow-x: hidden;
 }
+
 /*-----------------------------------HEALTH (Sleep)-------------------*/
 
 .lineHealth{
@@ -830,8 +857,11 @@ canvas{
   transform:rotate(-90deg);
   display: flex;
   flex-wrap: wrap;
-  height: 445px;
+  height: 420px;
   padding-top: 10px;
+  position: relative;
+  top: 30px;
+  left: 30px;
 }
 .barsFood div{
   height: 24%;
@@ -841,9 +871,10 @@ canvas{
 }
 
 .barsFoodNames{
+
   position: relative;
   top: -70px;
-  left: -15px;
+  left: 15px;
 }
 .barsFoodNames div{
   display: inline-block;
@@ -1038,7 +1069,9 @@ canvas{
   padding: 10px 0 0;
   z-index: -5;
 }
-
+.dashboard h1{
+  top: 1px;
+}
 .dashboard h3{
   padding: 10px;
   width: 100%;
@@ -1078,6 +1111,7 @@ font-size: 25px;
 }
 .dashboard .col-md-2{
   margin: 1%;
+
 }
 .train{
   display: flex;

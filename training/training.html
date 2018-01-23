@@ -8,7 +8,7 @@
         </div>
     </div>
     <div id="blocks" class="blockes">
-        <div id="das" class="elem"><a href="#!/dashboard"><div class="navOverlay"><i class="fab fa-facebook-f fa-3x"></i></div></a></div>
+        <div id="das" class="elem"><a href="#!/dashboard"><div class="navOverlay"><img src="./img/logo-black.png" alt=""></div></a></div>
         <div id="trai" class="elem"><a href="#!/training"><div class="navOverlay"><i class="material-icons md-48">fitness_center</i></div></a></div>
         <div id="not" class="elem"><a href="#!/note"><div class="navOverlay"><i class="material-icons md-48">format_list_numbered</i></div></a></div>
         <div id="foo" class="elem"><a href="#!/food"><div class="navOverlay shine"><i class="material-icons">restaurant</i></div></a></div>
@@ -27,7 +27,7 @@
                 <div class="row justify-content-md-center">
                     <div class="col-12 col-md-3 buttonTr">
                         <div>
-                        <button class="trainingBtn" >Cardio</button>
+                        <button ng-click="showCardio()" class="trainingBtn" >Cardio</button>
                         </div>
                     </div>
                     <div class="col-12 col-md-4 body">
@@ -38,15 +38,15 @@
                             <div class="bod" id="bodarms"><img src="./training/img/5.png" alt=""></div>
                         </div>
 
-                        <div class="zone arms" ng-mouseenter="addArms()" ng-mouseleave="removeArms()"></div>
-                        <div class="zone back" ng-mouseenter="addBack()" ng-mouseleave="removeBack()"></div>
-                        <div class="zone core" ng-mouseenter="addCore()" ng-mouseleave="removeCore()"></div>
-                        <div class="zone legs" ng-mouseenter="addLegs()" ng-mouseleave="removeLegs()"></div>
+                        <div class="zone arms" ng-click="showArms()" ng-mouseenter="addArms()" ng-mouseleave="removeArms()"></div>
+                        <div class="zone back" ng-click="showBack()" ng-mouseenter="addBack()" ng-mouseleave="removeBack()"></div>
+                        <div class="zone core" ng-click="showCore()" ng-mouseenter="addCore()" ng-mouseleave="removeCore()"></div>
+                        <div class="zone legs" ng-click="showLegs()" ng-mouseenter="addLegs()" ng-mouseleave="removeLegs()"></div>
 
                     </div>
                     <div class="col-12 col-md-3 buttonTr">
                         <div class="btntr">
-                        <button class="trainingBtn">Stretching</button>
+                        <button ng-click="showStretch()" class="trainingBtn">Stretching</button>
                     </div>
                     </div>
 
@@ -98,4 +98,34 @@
     </div>
 </div>
 
+<div id="cardioEx" class="helpOverlay" ng-click="hideCardio()">
+    <div class="helpSign tipTraining">
+        <h3>Your exercise for today: cardio</h3>
+    </div>
+</div>
+<div id="armsEx" class="helpOverlay" ng-click="hideArms()">
+    <div class="helpSign tipTraining">
+        <h3>Your exercise for today: arms</h3>
+    </div>
+</div>
+<div id="backEx" class="helpOverlay" ng-click="hideBack()">
+    <div class="helpSign tipTraining">
+        <h3>Your exercise for today: back</h3>
+    </div>
+</div>
+<div id="legsEx" class="helpOverlay" ng-click="hideLegs()">
+    <div class="helpSign tipTraining">
+        <h3>Your exercise for today: legs</h3>
+    </div>
+</div>
+<div id="coreEx" class="helpOverlay" ng-click="hideCore()">
+    <div class="helpSign tipTraining">
+        <h3>Your exercise for today: core</h3>
+    </div>
+</div>
+<div id="stretchEx" class="helpOverlay" ng-click="hideStretch()">
+    <div class="helpSign tipTraining">
+        <h3>Your exercise for today: stretching</h3>
+    </div>
+</div>
 

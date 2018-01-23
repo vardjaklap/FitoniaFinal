@@ -4,7 +4,7 @@ angular.module('myApp.food', ['ngRoute'])
 
 
 
-.controller('FoodCtrl', ['$scope','$interval',function($scope, $interval) {
+.controller('FoodCtrl', ['$scope','$interval', '$timeout',function($scope, $interval, $timeout) {
     $scope.menuCount = 1;
     $scope.openMenu = function(){
         $scope.menuCount += 1;
@@ -13,13 +13,17 @@ angular.module('myApp.food', ['ngRoute'])
             $('#menuBut1').addClass( "menubar1", 4500, "easeOutBounce");
             $('#menuBut2').addClass( "menubar2", 4500, "easeOutBounce");
             $('#menuBut3').addClass( "menubar3", 4500, "easeOutBounce");
+            $timeout($scope.closeMenu, 4000);
         }else{
-            $('#blocks').removeClass( "blocksActive", 1000, "easeOutBounce");
-            $('#menuBut1').removeClass( "menubar1", 4500, "easeOutBounce");
-            $('#menuBut2').removeClass( "menubar2", 4500, "easeOutBounce");
-            $('#menuBut3').removeClass( "menubar3", 4500, "easeOutBounce");
+            $scope.closeMenu();
         }
 
+    };
+    $scope.closeMenu = function(){
+        $('#blocks').removeClass( "blocksActive", 1000, "easeOutBounce");
+        $('#menuBut1').removeClass( "menubar1", 4500, "easeOutBounce");
+        $('#menuBut2').removeClass( "menubar2", 4500, "easeOutBounce");
+        $('#menuBut3').removeClass( "menubar3", 4500, "easeOutBounce");
     };
 
     var barFood1 = new ldBar("#calories");
@@ -61,15 +65,17 @@ angular.module('myApp.food', ['ngRoute'])
         $scope.progressProt += 5;
         $scope.progressCarbs += 60;
     };
-
+        $scope.checker = 0;
     $scope.$watch('progressCals',function(newValue,oldValue){
         var progrCals = newValue / 10;
         if(newValue>=2500){
             barFood1.set(100);
+            $scope.checker += 1;
             // $timeout($scope.removeSuccess, 2500);
 
         }else{
             barFood1.set(progrCals);
+            $scope.checker += 1;
 
         }
     });
@@ -95,7 +101,7 @@ angular.module('myApp.food', ['ngRoute'])
         }
     });
     $scope.$watch('progressCarbs',function(newValue,oldValue){
-        var progrCarbs = newValue;
+        var progrCarbs = newValue /2;
         if(newValue>=180){
             barFood4.set(100);
             // $timeout($scope.removeSuccess, 2500);
@@ -104,6 +110,15 @@ angular.module('myApp.food', ['ngRoute'])
             barFood4.set(progrCarbs);
         }
     });
+    $scope.$watch('checker',function(newValue,oldValue){
+        if(barFood1.value === 100 && barFood2.value === 100 && barFood3.value === 100 && barFood4.value === 100){
+
+            $('#waterSuccess').addClass( "helpActive", 1000, "easeOutBounce");
+        }
+    });
+    $scope.removeSuccess = function(){
+        $('#waterSuccess').removeClass( "helpActive", 1000, "easeOutBounce");
+    };
 
     var canvas = document.querySelector('.snowFood'),
         ctx = canvas.getContext('2d'),
@@ -219,5 +234,6 @@ angular.module('myApp.food', ['ngRoute'])
     $scope.hideHelp = function(){
         $('#helpFoodPage').removeClass("helpActive");
     };
+
 
 }]);

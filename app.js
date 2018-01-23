@@ -51,6 +51,29 @@ angular.module('myApp', ['ngAnimate',
 
     .controller('MainCtrl', ['$scope','$interval', '$timeout',function($scope, $interval, $timeout) {
 
+        $scope.user = users[1];
+        $scope.todayIs = new Date().getDay();
+        console.log($scope.todayIs);
+
+        $scope.$watch('todayIs',function(newValue,oldValue){
+            if(newValue === 1){
+                $scope.user.trDay = 'cardio'
+            }else if(newValue === 2){
+                $scope.user.trDay = 'arms'
+            }else if(newValue === 3){
+                $scope.user.trDay = 'core'
+            }else if(newValue === 4){
+                $scope.user.trDay = 'back'
+            }else if(newValue === 5){
+                $scope.user.trDay = 'legs'
+            }else if(newValue === 6){
+                $scope.user.trDay = 'stretch'
+            }else if(newValue === 7){
+                $scope.user.trDay = 'rest'
+            }
+        });
+
+
         $scope.tipNum= 1;
         $interval(callAtInterval, 5000);
         function callAtInterval() {
@@ -94,6 +117,8 @@ angular.module('myApp', ['ngAnimate',
         }
 
     }]);
+
+
 
 
 // $('.navOverlay').mouseenter(function(){

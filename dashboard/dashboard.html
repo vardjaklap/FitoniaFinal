@@ -7,7 +7,7 @@
         </div>
     </div>
     <div id="blocks" class="blockes">
-        <div id="das" class="elem"><a href="#!/dashboard"><div class="navOverlay"><i class="fab fa-facebook-f fa-3x"></i></div></a></div>
+        <div id="das" class="elem"><a href="#!/dashboard"><div class="navOverlay"><img src="./img/logo-black.png" alt=""></div></a></div>
         <div id="trai" class="elem"><a href="#!/training"><div class="navOverlay"><i class="material-icons md-48">fitness_center</i></div></a></div>
         <div id="not" class="elem"><a href="#!/note"><div class="navOverlay"><i class="material-icons md-48">format_list_numbered</i></div></a></div>
         <div id="foo" class="elem"><a href="#!/food"><div class="navOverlay shine"><i class="material-icons">restaurant</i></div></a></div>
@@ -21,17 +21,17 @@
     <div class="overlayDashboard">
         <div class="headline">
             <div class="lineDashboard"></div>
-            <div class = "nameDashboard"><h1>Dashboard</h1></div>
+            <div class = "nameDashboard"><img src="./img/logo.png" alt="" class="logo"><h1>Fitonia</h1></div>
         </div>
 
         <div class="container">
             <div class="row justify-content-md-center dashb">
-                <div class="col-7 col-md-2">
+                <div class="col-7 col-md-2 ">
                     <div id="dashTr" class="dash">
                         <a href="#!/training">
                             <div>
                                 <h3>Training</h3>
-                                <p>Today is the leg day!</p>
+                                <p>Today is the {{user.trDay}} day!</p>
                                 <i class="material-icons md-48">fitness_center</i>
                             </div>
                         </a>
@@ -42,7 +42,7 @@
                         <a href="#!/note">
                             <div>
                                 <h3>Note</h3>
-                                <p>No tasks for today.</p>
+                                <p>{{user.noteMessage}}</p>
                                 <i class="material-icons md-48">format_list_numbered</i>
                             </div>
                         </a>
@@ -64,7 +64,7 @@
                         <a href="#!/water">
                             <div>
                                 <h3>Water</h3>
-                                <p>42% so far!</p>
+                                <p>{{user.water}}% so far!</p>
                                 <i class="material-icons md-dark md-inactive">local_drink</i>
                             </div>
                         </a>
