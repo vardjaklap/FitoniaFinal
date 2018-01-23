@@ -1,19 +1,21 @@
-<nav>
-    <div id="menuBut" ng-click="openMenu()">
-        <div id="menuBut1"></div>
-        <div id="menuBut2"></div>
-        <div id="menuBut3"></div>
+<div class="navigation">
+    <div class="lines">
+        <div id="menuBut" ng-click="openMenu()">
+            <div id="menuBut1"></div>
+            <div id="menuBut2"></div>
+            <div id="menuBut3"></div>
+        </div>
     </div>
-    <div id="menu" class="wrapMenu" ng-mouseleave="openMenu()">
-        <div id="mainPage"><a href="#!/dashboard"><div id="navDash" class="navOverlay"><i class="fab fa-facebook-f fa-3x"></i></div></a></div>
-        <div id="sectionTwo"><a href="#!/training"><div id="navTrain" class="navOverlay"><i class="material-icons md-48">fitness_center</i></div></a></div>
-        <div id="sectionThree"><a href="#!/note"><div id="navNote" class="navOverlay"><i class="material-icons md-48">format_list_numbered</i></div></a></div>
-        <div id="sectionFour"><a href="#!/food"><div id="navFood" class="navOverlay"><i class="material-icons">restaurant</i></div></a></div>
-        <div id="sectionFive"><a href="#!/water"><div id="navWat" class="navOverlay shine"><i class="material-icons md-dark md-inactive">local_drink</i></div></a></div>
-        <div id="sectionSix"><a href="#!/health"><div id="navSleep" class="navOverlay"><i class="material-icons md-dark md-inactive">local_hotel</i></div></a></div>
-        <div id="sectionSeven"><a href="#!/settings"><div id="navSet" class="navOverlay"><i class="material-icons md-48">settings</i></div></a></div>
+    <div id="blocks" class="blockes">
+        <div id="das" class="elem"><a href="#!/dashboard"><div class="navOverlay"><i class="fab fa-facebook-f fa-3x"></i></div></a></div>
+        <div id="trai" class="elem"><a href="#!/training"><div class="navOverlay"><i class="material-icons md-48">fitness_center</i></div></a></div>
+        <div id="not" class="elem"><a href="#!/note"><div class="navOverlay"><i class="material-icons md-48">format_list_numbered</i></div></a></div>
+        <div id="foo" class="elem"><a href="#!/food"><div class="navOverlay shine"><i class="material-icons">restaurant</i></div></a></div>
+        <div id="wat" class="elem"><a href="#!/water"><div class="navOverlay"><i class="material-icons md-dark md-inactive">local_drink</i></div></a></div>
+        <div id="slee" class="elem"><a href="#!/health"><div class="navOverlay"><i class="material-icons md-dark md-inactive">local_hotel</i></div></a></div>
+        <div id="set" class="elem"><a href="#!/settings"><div class="navOverlay"><i class="material-icons md-48">settings</i></div></a></div>
     </div>
-</nav>
+</div>
 <canvas class="snow snowWater"></canvas>
 
 
@@ -91,21 +93,33 @@
 
             <div>
                 <div class="tips" >
-                    <div id="tipOne" class="tip tipWater">
+                    <div id="tipOne" class="tip tipWater tipActive">
                         <h3>Tip</h3>
-                        <p>Try drinking pure water instead of tea or coffee.</p>
+                        <p>Try drinking flat water instead of tea or coffee.</p>
                     </div>
                     <div id="tipTwo" class="tip tipWater">
                         <h3>Did you know...</h3>
-                        <p>The chemical formula for water is H2O?</p>
+                        <p>It is easy to think you are hungry when your body simply needs water.</p>
                     </div>
                     <div id="tipThree" class="tip tipWater">
                         <h3>Tip</h3>
-                        <p>While hydrated, your skin looks radiant!</p>
+                        <p>For every alcohol cocktail turn up one glass of water.</p>
                     </div>
                     <div id="tipFour" class="tip tipWater">
                         <h3>Fact:</h3>
                         <p>Water helps you lose weight!</p>
+                    </div>
+                    <div id="tipFive" class="tip tipWater">
+                        <h3>Tip</h3>
+                        <p>Infuse your water with fruits, vegetables, or herbs for better taste.</p>
+                    </div>
+                    <div id="tipSix" class="tip tipWater">
+                        <h3>Tip</h3>
+                        <p>Always leave the cup in plain sight so you’re constantly reminded to drink. </p>
+                    </div>
+                    <div id="tipSeven" class="tip tipWater">
+                        <h3>Tip</h3>
+                        <p>Drink water before a meal to reduce hunger.</p>
                     </div>
                 </div>
             </div>
@@ -115,7 +129,7 @@
 
 
 <div id="helpWaterPage" class="helpOverlay" ng-click="hideHelp()">
-    <div class="helpSign">
+    <div class="helpSign tipWater">
         <h3>#HelpHydration</h3>
         <p>The usage is very simple: as you drink water, be sure to fill it up using these instruments. As soon as you reach 100%, your job for today is done!</p>
     </div>

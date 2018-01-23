@@ -1,26 +1,28 @@
 <canvas class="snow snowNote"></canvas>
-<nav>
-    <div id="menuBut" ng-click="openMenu()">
-        <div id="menuBut1"></div>
-        <div id="menuBut2"></div>
-        <div id="menuBut3"></div>
+<div class="navigation">
+    <div class="lines">
+        <div id="menuBut" ng-click="openMenu()">
+            <div id="menuBut1"></div>
+            <div id="menuBut2"></div>
+            <div id="menuBut3"></div>
+        </div>
     </div>
-    <div id="menu" class="wrapMenu" ng-mouseleave="openMenu()">
-        <div id="mainPage"><a href="#!/dashboard"><div id="navDash" class="navOverlay"><i class="fab fa-facebook-f fa-3x"></i></div></a></div>
-        <div id="sectionTwo"><a href="#!/training"><div id="navTrain" class="navOverlay"><i class="material-icons md-48">fitness_center</i></div></a></div>
-        <div id="sectionThree"><a href="#!/note"><div id="navNote" class="navOverlay shine"><i class="material-icons md-48">format_list_numbered</i></div></a></div>
-        <div id="sectionFour"><a href="#!/food"><div id="navFood" class="navOverlay"><i class="material-icons">restaurant</i></div></a></div>
-        <div id="sectionFive"><a href="#!/water"><div id="navWat" class="navOverlay"><i class="material-icons md-dark md-inactive">local_drink</i></div></a></div>
-        <div id="sectionSix"><a href="#!/health"><div id="navSleep" class="navOverlay"><i class="material-icons md-dark md-inactive">local_hotel</i></div></a></div>
-        <div id="sectionSeven"><a href="#!/settings"><div id="navSet" class="navOverlay"><i class="material-icons md-48">settings</i></div></a></div>
+    <div id="blocks" class="blockes">
+        <div id="das" class="elem"><a href="#!/dashboard"><div class="navOverlay"><i class="fab fa-facebook-f fa-3x"></i></div></a></div>
+        <div id="trai" class="elem"><a href="#!/training"><div class="navOverlay"><i class="material-icons md-48">fitness_center</i></div></a></div>
+        <div id="not" class="elem"><a href="#!/note"><div class="navOverlay"><i class="material-icons md-48">format_list_numbered</i></div></a></div>
+        <div id="foo" class="elem"><a href="#!/food"><div class="navOverlay shine"><i class="material-icons">restaurant</i></div></a></div>
+        <div id="wat" class="elem"><a href="#!/water"><div class="navOverlay"><i class="material-icons md-dark md-inactive">local_drink</i></div></a></div>
+        <div id="slee" class="elem"><a href="#!/health"><div class="navOverlay"><i class="material-icons md-dark md-inactive">local_hotel</i></div></a></div>
+        <div id="set" class="elem"><a href="#!/settings"><div class="navOverlay"><i class="material-icons md-48">settings</i></div></a></div>
     </div>
-</nav>
+</div>
 <div class="note">
     <div class="overlayNote">
         <div class="wrapper">
             <div class="headline">
         <div class="lineNote"></div>
-        <div class="nameNote"><i class="material-icons md-48">format_list_numbered</i><h1>Weekly Planner</h1></div></div>
+        <div class="nameNote"><i class="material-icons md-48">format_list_numbered</i><h1>Planner</h1></div></div>
         <div class="container">
             <div class="col-12 col-md-3">
                 <div class="onenote">
@@ -78,7 +80,7 @@
 <div class="helpNote"><button ng-click="showHelp()">?</button></div>
 
 <div id="helpNotePage" class="helpOverlay" ng-click="hideHelp()">
-    <div class="helpSign">
+    <div class="helpSign" style="color: rgb(200, 185, 0);">
         <h3>#HelpNote</h3>
         <p>It`s very simple and convenient </p>
     </div>

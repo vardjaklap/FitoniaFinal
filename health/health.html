@@ -1,20 +1,22 @@
 <canvas class="snow snowHealth"></canvas>
-<nav>
-    <div id="menuBut" ng-click="openMenu()">
-        <div id="menuBut1"></div>
-        <div id="menuBut2"></div>
-        <div id="menuBut3"></div>
+<div class="navigation">
+    <div class="lines">
+        <div id="menuBut" ng-click="openMenu()">
+            <div id="menuBut1"></div>
+            <div id="menuBut2"></div>
+            <div id="menuBut3"></div>
+        </div>
     </div>
-    <div id="menu" class="wrapMenu" ng-mouseleave="openMenu()">
-        <div id="mainPage"><a href="#!/dashboard"><div id="navDash" class="navOverlay"><i class="fab fa-facebook-f fa-3x"></i></div></a></div>
-        <div id="sectionTwo"><a href="#!/training"><div id="navTrain" class="navOverlay"><i class="material-icons md-48">fitness_center</i></div></a></div>
-        <div id="sectionThree"><a href="#!/note"><div id="navNote" class="navOverlay"><i class="material-icons md-48">format_list_numbered</i></div></a></div>
-        <div id="sectionFour"><a href="#!/food"><div id="navFood" class="navOverlay"><i class="material-icons">restaurant</i></div></a></div>
-        <div id="sectionFive"><a href="#!/water"><div id="navWat" class="navOverlay"><i class="material-icons md-dark md-inactive">local_drink</i></div></a></div>
-        <div id="sectionSix"><a href="#!/health"><div id="navSleep" class="navOverlay shine"><i class="material-icons md-dark md-inactive">local_hotel</i></div></a></div>
-        <div id="sectionSeven"><a href="#!/settings"><div id="navSet" class="navOverlay"><i class="material-icons md-48">settings</i></div></a></div>
+    <div id="blocks" class="blockes">
+        <div id="das" class="elem"><a href="#!/dashboard"><div class="navOverlay"><i class="fab fa-facebook-f fa-3x"></i></div></a></div>
+        <div id="trai" class="elem"><a href="#!/training"><div class="navOverlay"><i class="material-icons md-48">fitness_center</i></div></a></div>
+        <div id="not" class="elem"><a href="#!/note"><div class="navOverlay"><i class="material-icons md-48">format_list_numbered</i></div></a></div>
+        <div id="foo" class="elem"><a href="#!/food"><div class="navOverlay shine"><i class="material-icons">restaurant</i></div></a></div>
+        <div id="wat" class="elem"><a href="#!/water"><div class="navOverlay"><i class="material-icons md-dark md-inactive">local_drink</i></div></a></div>
+        <div id="slee" class="elem"><a href="#!/health"><div class="navOverlay"><i class="material-icons md-dark md-inactive">local_hotel</i></div></a></div>
+        <div id="set" class="elem"><a href="#!/settings"><div class="navOverlay"><i class="material-icons md-48">settings</i></div></a></div>
     </div>
-</nav>
+</div>
 <div class="health">
     <div class="overlayHealth">
         <div class="headline">
@@ -23,30 +25,30 @@
         </div>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-4 carr sleep">
+                <div class="col-12 col-md-4 carr sleep">
                     <div class="row justify-content-md-center">
-                        <div class="col-10 texts">
+                        <div class="col-12 texts">
                             <h3>Start and end of your sleep:</h3>
                         </div>
                     </div>
                     <div class="row justify-content-md-center">
-                        <div class="col-4 inputs">
+                        <div class="col-5 col-md-4 inputs">
                             <input type="time" name="time" placeholder="hh:mm" value="22:15:00" required>
                         </div>
                         <span>-</span>
-                        <div class="col-4 inputs">
+                        <div class="col-5 col-md-4 inputs">
                             <input type="time" name="time" placeholder="hh:mm" value="08:15:00" required>
                         </div>
                     </div>
                 </div>
-                <div class="col-4 carr sleep">
+                <div class="col-12 col-md-4 carr sleep">
                     <div class="row justify-content-md-center">
-                        <div class="col-10 texts">
+                        <div class="col-12 col-md-10 texts">
                             <h3>Quality of your sleep:</h3>
                         </div>
                     </div>
                     <div class="row justify-content-md-center">
-                        <div class="col-10 star">
+                        <div class="col-12 col-md-10 star">
                             <input type="radio" name="quality" value="1">1
                             <input type="radio" name="quality" value="2">2
                             <input type="radio" name="quality" value="3">3
@@ -57,29 +59,63 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-            <div class="col-8 align-self-center carr">
+            <div class="col-12 col-md-8 align-self-center carr">
             <div class="row justify-content-md-center">
-                <div class="col-6 texts">
+                <div class="col-12 col-md-4 texts">
                     <h3>Additional notes:</h3>
                 </div>
             </div>
             <div class="row justify-content-md-center">
-                <div class="col-8">
+                <div class="col-12 col-md-8">
                 <textarea name="" id="healthText" cols="20" rows="10" ></textarea>
                 </div>
             </div>
             </div>
             </div>
             <div class="row justify-content-md-center">
-                <button>Submit</button>
+                <div class="col-12 col-md-3">
+                <button class="sleepBtn">Submit</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="tips tipsHealth" >
+                    <div id="tipOne" class="tip tipSleep tipActive">
+                        <h3>Tip</h3>
+                        <p>If you have trouble sleeping, avoid naps, especially in the afternoon.</p>
+                    </div>
+                    <div id="tipTwo" class="tip tipSleep">
+                        <h3>Did you know...</h3>
+                        <p>Ideally, falling asleep at night should take you 10-15 minutes.</p>
+                    </div>
+                    <div id="tipThree" class="tip tipSleep">
+                        <h3>Tip</h3>
+                        <p>If you can't sleep, go into another room and do something relaxing until you feel tired.</p>
+                    </div>
+                    <div id="tipFour" class="tip tipSleep">
+                        <h3>Tip</h3>
+                        <p>An hour before going to bed, turn away from all electronic screens, media, and work.</p>
+                    </div>
+                    <div id="tipFive" class="tip tipSleep">
+                        <h3>Tip</h3>
+                        <p>Stick to a sleep schedule of the same bedtime and wake up time, even on the weekends.</p>
+                    </div>
+                    <div id="tipSix" class="tip tipSleep">
+                        <h3>Fact:</h3>
+                        <p>Doing calming activities before bedtime, such as taking a bath, might promote better sleep.</p>
+                    </div>
+                    <div id="tipSeven" class="tip tipSleep">
+                        <h3>Tip</h3>
+                        <p>In the afternoon, avoid drinking any caffeine or consuming a lot of alcohol.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="helpHealth"><button ng-click="showHelp()">?</button></div>
     </div>
 </div>
+<div class="helpHealth"><button class="sleepBtn" ng-click="showHelp()">?</button></div>
 
 <div id="helpHealthPage" class="helpOverlay" ng-click="hideHelp()">
-    <div class="helpSign">
+    <div class="helpSign tipSleep">
         <h3>#HelpHealth</h3>
         <p>The usage is very simple: as you drink water, be sure to fill it up using these instruments. As soon as you reach 100%, your job for today is done!</p>
     </div>

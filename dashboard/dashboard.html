@@ -1,19 +1,21 @@
-<nav>
-    <div id="menuBut" ng-click="openMenu()">
-        <div id="menuBut1"></div>
-        <div id="menuBut2"></div>
-        <div id="menuBut3"></div>
+<div class="navigation">
+    <div class="lines">
+        <div id="menuBut" ng-click="openMenu()">
+            <div id="menuBut1"></div>
+            <div id="menuBut2"></div>
+            <div id="menuBut3"></div>
+        </div>
     </div>
-    <div id="menu" class="wrapMenu" ng-mouseleave="openMenu()">
-        <div id="mainPage"><a href="#!/dashboard"><div id="navDash" class="navOverlay shine"><i class="fab fa-facebook-f fa-3x"></i></div></a></div>
-        <div id="sectionTwo"><a href="#!/training"><div id="navTrain" class="navOverlay"><i class="material-icons md-48">fitness_center</i></div></a></div>
-        <div id="sectionThree"><a href="#!/note"><div id="navNote" class="navOverlay"><i class="material-icons md-48">format_list_numbered</i></div></a></div>
-        <div id="sectionFour"><a href="#!/food"><div id="navFood" class="navOverlay"><i class="material-icons">restaurant</i></div></a></div>
-        <div id="sectionFive"><a href="#!/water"><div id="navWat" class="navOverlay"><i class="material-icons md-dark md-inactive">local_drink</i></div></a></div>
-        <div id="sectionSix"><a href="#!/health"><div id="navSleep" class="navOverlay"><i class="material-icons md-dark md-inactive">local_hotel</i></div></a></div>
-        <div id="sectionSeven"><a href="#!/settings"><div id="navSet" class="navOverlay"><i class="material-icons md-48">settings</i></div></a></div>
+    <div id="blocks" class="blockes">
+        <div id="das" class="elem"><a href="#!/dashboard"><div class="navOverlay"><i class="fab fa-facebook-f fa-3x"></i></div></a></div>
+        <div id="trai" class="elem"><a href="#!/training"><div class="navOverlay"><i class="material-icons md-48">fitness_center</i></div></a></div>
+        <div id="not" class="elem"><a href="#!/note"><div class="navOverlay"><i class="material-icons md-48">format_list_numbered</i></div></a></div>
+        <div id="foo" class="elem"><a href="#!/food"><div class="navOverlay shine"><i class="material-icons">restaurant</i></div></a></div>
+        <div id="wat" class="elem"><a href="#!/water"><div class="navOverlay"><i class="material-icons md-dark md-inactive">local_drink</i></div></a></div>
+        <div id="slee" class="elem"><a href="#!/health"><div class="navOverlay"><i class="material-icons md-dark md-inactive">local_hotel</i></div></a></div>
+        <div id="set" class="elem"><a href="#!/settings"><div class="navOverlay"><i class="material-icons md-48">settings</i></div></a></div>
     </div>
-</nav>
+</div>
 <canvas class="snow snowDashboard"></canvas>
 <div class="dashboard">
     <div class="overlayDashboard">
@@ -77,6 +79,38 @@
                                 <i class="material-icons md-dark md-inactive">local_hotel</i>
                             </div>
                         </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="tips tipsFood" >
+                    <div id="tipOne" class="tip tipActive" style="color: rgb(244, 67, 54);">
+                        <h3>Fact</h3>
+                        <p>Strawberries have more vitamin C than the oranges.</p>
+                    </div>
+                    <div id="tipTwo" class="tip tipTraining">
+                        <h3>Did you know...</h3>
+                        <p>That 80% of cucumber is water?</p>
+                    </div>
+                    <div id="tipThree" class="tip" style="color: rgb(200, 185, 0);">
+                        <h3>Tip</h3>
+                        <p>Vitamins help your body stay healthy and fight disease. Vitamins are found in fruit and vegetables.</p>
+                    </div>
+                    <div id="tipFour" class="tip tipFood">
+                        <h3>Tip</h3>
+                        <p>Fiber helps your body digest food. It is found in vegetables, whole grains and fruit.</p>
+                    </div>
+                    <div id="tipFive" class="tip tipWater">
+                        <h3>Fact:</h3>
+                        <p>Water reduces hunger, raises your metabolism and has zero calories!</p>
+                    </div>
+                    <div id="tipSix" class="tip tipSleep">
+                        <h3>Tip</h3>
+                        <p>Try guided meditation for better sleep.</p>
+                    </div>
+                    <div id="tipSeven" class="tip" style="color: rgb(156, 39, 176);">
+                        <h3>Tip</h3>
+                        <p>Eating nuts helps accelerate your brain activity.</p>
                     </div>
                 </div>
             </div>

@@ -3,21 +3,21 @@
 angular.module('myApp.water', ['ngRoute', 'ngAnimate'])
 
     .controller('WaterCtrl', ['$scope','$interval', '$timeout',function($scope, $interval, $timeout) {
-        //  $scope.menuCount = 1;
-        // $scope.openMenu = function(){
-        //     $scope.menuCount += 1;
-        //     if($scope.menuCount%2 == 0){
-        //         $('#menu').addClass( "activeMenu", 4500, "easeOutBounce");
-        //         $('#menuBut1').addClass( "menubar1", 4500, "easeOutBounce");
-        //         $('#menuBut2').addClass( "menubar2", 4500, "easeOutBounce");
-        //         $('#menuBut3').addClass( "menubar3", 4500, "easeOutBounce");
-        //     }else{
-        //         $('#menu').removeClass( "activeMenu", 1000, "easeOutBounce");
-        //         $('#menuBut1').removeClass( "menubar1", 4500, "easeOutBounce");
-        //         $('#menuBut2').removeClass( "menubar2", 4500, "easeOutBounce");
-        //         $('#menuBut3').removeClass( "menubar3", 4500, "easeOutBounce");
-        //     }
-        // };
+         $scope.menuCount = 1;
+        $scope.openMenu = function(){
+            $scope.menuCount += 1;
+            if($scope.menuCount%2 == 0){
+                $('#blocks').addClass( "blocksActive", 4500, "easeOutBounce");
+                $('#menuBut1').addClass( "menubar1", 4500, "easeOutBounce");
+                $('#menuBut2').addClass( "menubar2", 4500, "easeOutBounce");
+                $('#menuBut3').addClass( "menubar3", 4500, "easeOutBounce");
+            }else{
+                $('#blocks').removeClass( "blocksActive", 1000, "easeOutBounce");
+                $('#menuBut1').removeClass( "menubar1", 4500, "easeOutBounce");
+                $('#menuBut2').removeClass( "menubar2", 4500, "easeOutBounce");
+                $('#menuBut3').removeClass( "menubar3", 4500, "easeOutBounce");
+            }
+        };
 
         $scope.progressWater = 0;
         $scope.add = function(){
@@ -59,41 +59,6 @@ angular.module('myApp.water', ['ngRoute', 'ngAnimate'])
         $scope.removeSuccess = function(){
             $('#waterSuccess').removeClass( "helpActive", 1000, "easeOutBounce");
         };
-
-
-
-
-        $scope.tipNumWater = 1;
-        $('#tipFour').addClass( "tipActive", 1000, "easeOutBounce");
-        $interval(callAtInterval, 8000, 4);
-        function callAtInterval() {
-            if($scope.tipNumWater === 1){
-                $('#tipOne').addClass( "tipActive", 500, "easeOutBounce");
-                $('#tipFour').removeClass( "tipActive", 2000, "easeOutBounce");
-                $scope.tipNumWater += 1;
-                console.log($scope.tipNumWater);
-
-            }else if($scope.tipNumWater === 2){
-                $('#tipTwo').addClass( "tipActive", 500, "easeOutBounce");
-                $('#tipOne').removeClass( "tipActive", 2000, "easeOutBounce");
-                $scope.tipNumWater += 1;
-                console.log($scope.tipNumWater);
-
-            }else if($scope.tipNumWater === 3){
-                $('#tipThree').addClass( "tipActive", 1000, "easeOutBounce");
-                $('#tipTwo').removeClass( "tipActive", 1000, "easeOutBounce");
-                $scope.tipNumWater += 1;
-                console.log($scope.tipNumWater);
-
-            }else if($scope.tipNumWater === 4){
-                $('#tipFour').addClass( "tipActive", 1000, "easeOutBounce");
-                $('#tipThree').removeClass( "tipActive", 1000, "easeOutBounce");
-                $scope.tipNumWater = 1;
-                console.log($scope.tipNumWater);
-
-            }
-        }
-
 
 
 

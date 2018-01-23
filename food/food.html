@@ -1,20 +1,22 @@
 <canvas class="snow snowFood"></canvas>
-<nav>
-    <div id="menuBut" ng-click="openMenu()">
-        <div id="menuBut1"></div>
-        <div id="menuBut2"></div>
-        <div id="menuBut3"></div>
+<div class="navigation">
+    <div class="lines">
+        <div id="menuBut" ng-click="openMenu()">
+            <div id="menuBut1"></div>
+            <div id="menuBut2"></div>
+            <div id="menuBut3"></div>
+        </div>
     </div>
-    <div id="menu" class="wrapMenu" ng-mouseleave="openMenu()">
-        <div id="mainPage"><a href="#!/dashboard"><div id="navDash" class="navOverlay"><i class="fab fa-facebook-f fa-3x"></i></div></a></div>
-        <div id="sectionTwo"><a href="#!/training"><div id="navTrain" class="navOverlay"><i class="material-icons md-48">fitness_center</i></div></a></div>
-        <div id="sectionThree"><a href="#!/note"><div id="navNote" class="navOverlay"><i class="material-icons md-48">format_list_numbered</i></div></a></div>
-        <div id="sectionFour"><a href="#!/food"><div id="navFood" class="navOverlay shine"><i class="material-icons">restaurant</i></div></a></div>
-        <div id="sectionFive"><a href="#!/water"><div id="navWat" class="navOverlay"><i class="material-icons md-dark md-inactive">local_drink</i></div></a></div>
-        <div id="sectionSix"><a href="#!/health"><div id="navSleep" class="navOverlay"><i class="material-icons md-dark md-inactive">local_hotel</i></div></a></div>
-        <div id="sectionSeven"><a href="#!/settings"><div id="navSet" class="navOverlay"><i class="material-icons md-48">settings</i></div></a></div>
+    <div id="blocks" class="blockes">
+        <div id="das" class="elem"><a href="#!/dashboard"><div class="navOverlay"><i class="fab fa-facebook-f fa-3x"></i></div></a></div>
+        <div id="trai" class="elem"><a href="#!/training"><div class="navOverlay"><i class="material-icons md-48">fitness_center</i></div></a></div>
+        <div id="not" class="elem"><a href="#!/note"><div class="navOverlay"><i class="material-icons md-48">format_list_numbered</i></div></a></div>
+        <div id="foo" class="elem"><a href="#!/food"><div class="navOverlay shine"><i class="material-icons">restaurant</i></div></a></div>
+        <div id="wat" class="elem"><a href="#!/water"><div class="navOverlay"><i class="material-icons md-dark md-inactive">local_drink</i></div></a></div>
+        <div id="slee" class="elem"><a href="#!/health"><div class="navOverlay"><i class="material-icons md-dark md-inactive">local_hotel</i></div></a></div>
+        <div id="set" class="elem"><a href="#!/settings"><div class="navOverlay"><i class="material-icons md-48">settings</i></div></a></div>
     </div>
-</nav>
+</div>
 <div class="food">
     <div class="overlayFood">
         <div class="headline">
@@ -24,22 +26,21 @@
         <div class="container">
 
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-10 col-md-5">
                         <div class="barsFood">
-                        <div id="calories" class="ldBar" data-stroke="rgb(244, 67, 54)" data-value="0"data-stroke-width="8" style="height: 90px; width: 350px;"></div>
-                        <div id="fats" class="ldBar" data-stroke="rgb(255, 235, 59)" data-value="0"data-stroke-width="8" style="height: 90px; width: 350px;"></div>
-                        <div id="protein" class="ldBar" data-stroke="rgb(33, 150, 243)" data-value="0"data-stroke-width="8" style="height: 90px; width: 350px;"></div>
-                        <div id="carbs" class="ldBar" data-stroke="rgb(156, 39, 176)" data-value="0" data-stroke-width="8" style="height: 90px; width: 350px;" ></div>
+                        <div id="calories" class="ldBar" data-stroke="rgb(244, 67, 54)" data-value="0"data-stroke-width="8" style="width:100%;height:60px"></div>
+                        <div id="fats" class="ldBar" data-stroke="rgb(255, 235, 59)" data-value="0"data-stroke-width="8" style="width:100%;height:60px"></div>
+                        <div id="protein" class="ldBar" data-stroke="rgb(33, 150, 243)" data-value="0"data-stroke-width="8" style="width:100%;height:60px"></div>
+                        <div id="carbs" class="ldBar" data-stroke="rgb(156, 39, 176)" data-value="0" data-stroke-width="8" style="width:100%;height:60px" ></div>
                     </div>
                         <div class="barsFoodNames">
                             <div><p>Calories</p></div>
                             <div><p>Fats</p></div>
                             <div><p>Protein</p></div>
-                            <div><p>Carbohydrates</p></div>
+                            <div><p>Carbohydr.</p></div>
                         </div>
                     </div>
-                    <div class="col-md-1"></div>
-                    <div class="col">
+                    <div class="col-12 col-md-6">
                         <div class="dishes">
                             <button ng-click="addChicken()">Chicken <br>Parmesan <br>Salad</button>
                             <button ng-click="addSoup()">Mushroom <br>Cream <br>Soup</button>
@@ -48,29 +49,40 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="tips tipsFood" >
+                        <div id="tipOne" class="tip tipFood tipActive">
+                            <h3>Tip</h3>
+                            <p>Breakfast is the most important meal of the day, so don't skip it.</p>
+                        </div>
+                        <div id="tipTwo" class="tip tipFood">
+                            <h3>Did you know...</h3>
+                            <p>It takes 20 minutes for your brain to know that your stomach is full, so eat slowly and stop eating before you feel full.</p>
+                        </div>
+                        <div id="tipThree" class="tip tipFood">
+                            <h3>Tip</h3>
+                            <p>While hydrated, your skin looks radiant!</p>
+                        </div>
+                        <div id="tipFour" class="tip tipFood">
+                            <h3>Fact:</h3>
+                            <p>Eating nuts helps accelerate your brain activity.</p>
+                        </div>
+                        <div id="tipFive" class="tip tipFood">
+                            <h3>Tip</h3>
+                            <p>Fats in milk products, meat and fish help your body build healthy nerves and fight off disease.</p>
+                        </div>
+                        <div id="tipSix" class="tip tipFood">
+                            <h3>Fact:</h3>
+                            <p>One can of soda contains 10 teaspoons of sugar.</p>
+                        </div>
+                        <div id="tipSeven" class="tip tipFood">
+                            <h3>Tip</h3>
+                            <p>Bake or roast food instead of grilling or frying.</p>
+                        </div>
+                    </div>
+                </div>
         </div>
 
-        <div>
-            <div class="tips tipsFood" >
-                <div id="tipOneFood" class="tip tipFood">
-                    <h3>Tip</h3>
-                    <p>Broiling and steaming food helps preserve nutrients</p>
-                </div>
-                <div id="tipTwoFood" class="tip tipFood">
-                    <h3>Did you know...</h3>
-                    <p>That 80% of cucumber is water?</p>
-                </div>
-                <div id="tipThreeFood" class="tip tipFood">
-                    <h3>Tip</h3>
-                    <p>While hydrated, your skin looks radiant!</p>
-                </div>
-                <div id="tipFourFood" class="tip tipFood">
-                    <h3>Fact:</h3>
-                    <p>Eating nuts helps accelerate your brain activity.</p>
-                </div>
-            </div>
-        </div>
         <div class="helpFood"><button ng-click="showHelp()">?</button></div>
 
 
@@ -79,7 +91,7 @@
 </div>
 
 <div id="helpFoodPage" class="helpOverlay" ng-click="hideHelp()">
-    <div class="helpSign">
+    <div class="helpSign tipFood" >
         <h3>#HelpHydration</h3>
         <p>The usage is very simple: as you drink water, be sure to fill it up using these instruments. As soon as you reach 100%, your job for today is done!</p>
     </div>

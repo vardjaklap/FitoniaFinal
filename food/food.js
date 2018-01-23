@@ -9,12 +9,12 @@ angular.module('myApp.food', ['ngRoute'])
     $scope.openMenu = function(){
         $scope.menuCount += 1;
         if($scope.menuCount%2 === 0){
-            $('#menu').addClass( "activeMenu", 4500, "easeOutBounce");
+            $('#blocks').addClass( "blocksActive", 4500, "easeOutBounce");
             $('#menuBut1').addClass( "menubar1", 4500, "easeOutBounce");
             $('#menuBut2').addClass( "menubar2", 4500, "easeOutBounce");
             $('#menuBut3').addClass( "menubar3", 4500, "easeOutBounce");
         }else{
-            $('#menu').removeClass( "activeMenu", 1000, "easeOutBounce");
+            $('#blocks').removeClass( "blocksActive", 1000, "easeOutBounce");
             $('#menuBut1').removeClass( "menubar1", 4500, "easeOutBounce");
             $('#menuBut2').removeClass( "menubar2", 4500, "easeOutBounce");
             $('#menuBut3').removeClass( "menubar3", 4500, "easeOutBounce");
@@ -212,37 +212,6 @@ angular.module('myApp.food', ['ngRoute'])
     }
 
     init();
-
-    $scope.tipNumFood = 1;
-    $('#tipFourFood').addClass( "tipActive", 1000, "easeOutBounce");
-    $interval(callAtInterval, 8000, 4);
-    function callAtInterval() {
-        if($scope.tipNumFood === 1){
-            $('#tipOneFood').addClass( "tipActive", 500, "easeOutBounce");
-            $('#tipFourFood').removeClass( "tipActive", 2000, "easeOutBounce");
-            $scope.tipNumFood += 1;
-            console.log($scope.tipNumFood);
-
-        }else if($scope.tipNumFood === 2){
-            $('#tipTwoFood').addClass( "tipActive", 500, "easeOutBounce");
-            $('#tipOneFood').removeClass( "tipActive", 2000, "easeOutBounce");
-            $scope.tipNumFood += 1;
-            console.log($scope.tipNumFood);
-
-        }else if($scope.tipNumFood === 3){
-            $('#tipThreeFood').addClass( "tipActive", 1000, "easeOutBounce");
-            $('#tipTwoFood').removeClass( "tipActive", 1000, "easeOutBounce");
-            $scope.tipNumFood += 1;
-            console.log($scope.tipNumFood);
-
-        }else if($scope.tipNumFood === 4){
-            $('#tipFourFood').addClass( "tipActive", 1000, "easeOutBounce");
-            $('#tipThreeFood').removeClass( "tipActive", 1000, "easeOutBounce");
-            $scope.tipNumFood = 1;
-            console.log($scope.tipNumFood);
-
-        }
-    }
 
     $scope.showHelp = function(){
         $('#helpFoodPage').addClass("helpActive");

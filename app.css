@@ -44,29 +44,103 @@ h1, h3{
 }
 /*------------------NAV---------------------------*/
 
-nav{
+.navigation{
   position: absolute;
-  z-index: 10;
+  z-index: 9999;
 }
-nav .wrap{
-  height: 700px;
-}
-
-nav > div > div{
-  height: 110px;
-  width: 80px;
-  position: relative;
-  border-radius: 0 3px 30px 0;
-  text-align: center;
-}
-nav i{
+.navigation i{
   position: relative;
   top: 40px;
   color: rgba(14, 14, 14, 0.5);
+  left: 10px;
 }
-
-.headLine i, h1{
+.navigation a{
+  z-index: 20;
+}
+#blocks{
+  position: relative;
+}
+.blockes{
+  position: relative;
+  left: -90px;
+}
+.blocksActive{
+  left: 0;
+}
+.elem{
+  height: 110px;
+  width: 80px;
+  position: absolute;
+  border-radius: 0 3px 30px 0;
+  /*left: -70px;*/
+}
+#das{
+  height: 80px;
+  z-index: 20;
+  background: rgb(244, 67, 54);
+  border: 1px rgb(186, 0, 13) solid;
+}
+#das i{
+  top: 10px;
+  left: 25px;
+}
+#trai{
+  top: 50px;
+  z-index: 19;
+  background: rgb(255, 167, 38);
+  border: 1px rgb(199, 120, 0) solid;
+}
+#not{
+  top: 130px;
+  z-index: 18;
+  background: rgb(255, 235, 59);
+  border: 1px rgb(200, 185, 0) solid;
+}
+#foo{
+  top: 210px;
+  z-index: 17;
+  background: rgb(0, 200, 83);
+  border: 1px rgb(0, 150, 36) solid;
+}
+#wat{
+  top: 290px;
+  z-index: 16;
+  background: rgb(33, 150, 243);
+  border: 1px rgb(0, 105, 192) solid;
+}
+#slee{
+  top: 370px;
+  z-index: 15;
+  background: rgb(94, 53, 177);
+  border: 1px rgb(40, 6, 128) solid;
+}
+#set{
+  top: 450px;
+  z-index: 14;
+  background: rgb(156, 39, 176);
+  border: 1px rgb(106, 0, 128) solid;
+}
+.navOverlay{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
+  transition-timing-function: linear;
+  border-radius: 0 3px 30px 0;
+  z-index: 20;
+}
+.navigation a:active .navOverlay{
+background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(33, 33, 33, 0.11));
+}
+.headline i{
+  font-size: 37px;
+}
+.headline h1{
+  margin-left: 10px;
   display: inline-block;
+  position: relative;
+  top: -5px;
+  font-size: 37px;
 }
 .material-icons {
   font-size: 50px;
@@ -94,74 +168,60 @@ nav i{
   -webkit-transform: rotate(45deg) translate(-7px, -7px) ;
   transform: rotate(45deg) translate(-7px, -7px) ;
 }
-.wrapMenu{
-  height: 0;
-}
 
-#mainPage{
-  height: 80px;
-  background: rgb(244, 67, 54);
-  border: 1px rgb(186, 0, 13) solid;
-  z-index: 10;
-}
-#mainPage i {
-  top: 10px;
-}
-#sectionTwo{
-  background: rgb(255, 167, 38);
-  border: 1px rgb(199, 120, 0) solid;
-  top: -30px;
-  z-index: 9;
-}
-#sectionThree{
-  background: rgb(255, 235, 59);
-  border: 1px rgb(200, 185, 0) solid;
-  top: -60px;
-  z-index: 8;
-}
-#sectionFour{
-  background: rgb(0, 200, 83);
-  border: 1px rgb(0, 150, 36) solid;
-  top: -90px;
-  z-index: 7;
-}
-#sectionFive{
-  background: rgb(33, 150, 243);
-  border: 1px rgb(0, 105, 192) solid;
-  top: -120px;
-  z-index: 6;
-}
-#sectionSix{
-  background: rgb(94, 53, 177);
-  border: 1px rgb(40, 6, 128) solid;
-  top: -150px;
-  z-index: 5;
-}
-#sectionSeven{
-  background: rgb(156, 39, 176);
-  border: 1px rgb(106, 0, 128) solid;
-  top: -180px;
-  z-index: 4;
-}
-.navOverlay{
-  height: 100%;
-  width: 100%;
-  position: relative;
-  border-radius: 0 3px 30px 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
-  -webkit-transition: all .5s;
-  -o-transition: all .5s;
-  transition: all .5s;
-  transition-timing-function: linear;
-}
+/*#navDash{*/
+  /*height: 80px;*/
+  /*background: rgb(244, 67, 54);*/
+  /*border: 1px rgb(186, 0, 13) solid;*/
+  /*z-index: 10;*/
+/*}*/
+/*#navDash i {*/
+  /*top: 10px;*/
+/*}*/
+/*#navTrain{*/
+  /*background: rgb(255, 167, 38);*/
+  /*border: 1px rgb(199, 120, 0) solid;*/
+  /*top: -30px;*/
+  /*z-index: 9;*/
+/*}*/
+/*#navNote{*/
+  /*background: rgb(255, 235, 59);*/
+  /*border: 1px rgb(200, 185, 0) solid;*/
+  /*top: -60px;*/
+  /*z-index: 8;*/
+/*}*/
+/*#navFood{*/
+  /*background: rgb(0, 200, 83);*/
+  /*border: 1px rgb(0, 150, 36) solid;*/
+  /*top: -90px;*/
+  /*z-index: 7;*/
+/*}*/
+/*#navWat{*/
+  /*background: rgb(33, 150, 243);*/
+  /*border: 1px rgb(0, 105, 192) solid;*/
+  /*top: -120px;*/
+  /*z-index: 6;*/
+/*}*/
+/*#navSleep{*/
+  /*background: rgb(94, 53, 177);*/
+  /*border: 1px rgb(40, 6, 128) solid;*/
+  /*top: -150px;*/
+  /*z-index: 5;*/
+/*}*/
+/*#navSet{*/
+  /*background: rgb(156, 39, 176);*/
+  /*border: 1px rgb(106, 0, 128) solid;*/
+  /*top: -180px;*/
+  /*z-index: 4;*/
+/*}*/
 
-.shine{
-  background: radial-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.63));
+/*.shine{*/
+  /*background: radial-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.63));*/
 
-}
-nav a:active .navOverlay{
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(33, 33, 33, 0.11));
-}
+/*}*/
+/*nav a:active .navOverlay{*/
+  /*background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(33, 33, 33, 0.11));*/
+/*}*/
 
 .helpOverlay{
   height: 100vh;
@@ -195,10 +255,7 @@ nav a:active .navOverlay{
   height: 70px;
   padding: 10px 0 0;
 }
-.nameWater h1{
-  margin-left: 20px;
-  margin-bottom: 0;
-}
+
 .overlayWater{
   height: 50vh;
   width: 100%;
@@ -243,17 +300,24 @@ nav a:active .navOverlay{
 }
 .tips{
   height: 80px;
-  width: 400px;
+  width: 350px;
   position: fixed;
-  bottom: 15px;
-  margin: 10px auto;
+  bottom: 5px;
+  margin: 5px auto;
   left: 0;
   right: 0;
   background-color: white;
   border: none;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  z-index: 9999;
 }
-
+.tips p{
+  margin-top: 5px;
+  font-size: 13px;
+}
+.tips h3{
+  font-size: 20px;
+}
 .tipActive{
   opacity: 1;
 }
@@ -274,6 +338,10 @@ nav a:active .navOverlay{
   outline: none;
 }
 .water button:hover{
+  background-color: rgb(0, 105, 192);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.helpWater button:hover{
   background-color: rgb(0, 105, 192);
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
@@ -366,8 +434,8 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
   border: none;
   border-radius: 50px;
   position: fixed;
-  bottom: 50px;
-  right: 60px;
+  bottom: 80px;
+  right: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   color: rgba(14, 14, 14, 0.5);
   font-size: 50px;
@@ -410,7 +478,7 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
 }
 .helpSign{
   height: 300px;
-  width: 500px;
+  width: 350px;
   background-color: rgba(255, 255, 255, 0.92);
   position: relative;
   top: 25%;
@@ -540,10 +608,6 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
   padding: 10px 0 0;
   z-index: 15;
 }
-.nameNote h1{
-  margin-left: 20px;
-  margin-bottom: 0;
-}
 
 
 .note textarea{
@@ -564,8 +628,8 @@ input:focus ~ #labelWaterInput, input:valid ~ #labelWaterInput{
   border: none;
   border-radius: 50px;
   position: fixed;
-  bottom: 30px;
-  right: 40px;
+  bottom: 80px;
+  right: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   color: rgba(14, 14, 14, 0.5);
   font-size: 50px;
@@ -614,10 +678,7 @@ canvas{
   height: 70px;
   padding: 10px 0 0;
 }
-.nameHealth h1{
-  margin-left: 20px;
-  margin-bottom: 0;
-}
+
 .health h3{
   padding: 10px;
   width: 100%;
@@ -648,7 +709,8 @@ canvas{
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   color: white;
   outline: none;
-  margin-top: 10px;
+  margin: 10px auto 95px;
+  display: block;
 }
 .health textarea{
   height: 200px;
@@ -718,20 +780,22 @@ canvas{
   background-color: #7953d2;
   border: none;
   border-radius: 50px;
-  position: absolute;
-  bottom: 50px;
-  right: 60px;
+  position: fixed;
+  bottom: 80px;
+  right: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   color: rgba(14, 14, 14, 0.5);
   font-size: 50px;
   outline: none;
 }
 
-.health button:hover{
+.sleepBtn:hover{
   background-color: #4d2c91;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
-
+.tipSleep{
+  color: #7953d2;
+}
 /*-----------------------------------FOOD (nutrition)-------------------*/
 
 
@@ -747,10 +811,6 @@ canvas{
   color: black;
   height: 70px;
   padding: 10px 0 0;
-}
-.nameFood h1{
-  margin-left: 20px;
-  margin-bottom: 0;
 }
 .food h3{
   padding: 5px;
@@ -782,18 +842,25 @@ canvas{
 
 .barsFoodNames{
   position: relative;
-  top: -25px;
+  top: -70px;
+  left: -15px;
 }
 .barsFoodNames div{
   display: inline-block;
   width: 24%;
   text-align: center;
-  font-size: 15px;
+  font-size: 14px;
+}
+.foodDish{
+  padding-right: 50px;
 }
 .dishes{
   display: flex;
   flex-wrap: wrap;
   align-content: center;
+  padding-left: 90px;
+  padding-top: 30px;
+  margin-bottom: 60px;
 }
 .dishes button{
   height: 180px;
@@ -815,13 +882,14 @@ canvas{
   background-color: #00c853;
   border: none;
   border-radius: 50px;
-  position: absolute;
-  bottom: 50px;
-  right: 60px;
+  position: fixed;
+  bottom: 80px;
+  right: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   color: rgba(14, 14, 14, 0.5);
   font-size: 50px;
   outline: none;
+  z-index: 9999;
 }
 
 .food button:hover{
@@ -848,10 +916,7 @@ canvas{
   padding: 10px 0 0;
   z-index: -5;
 }
-.nameTraining h1{
-  margin-left: 20px;
-  margin-bottom: 0;
-}
+
 .training h3{
   padding: 10px;
   width: 100%;
@@ -861,9 +926,6 @@ canvas{
 }
 .tipTraining{
   color: #ffb300;
-}
-.buttonTr{
-  margin:10px;
 }
 .buttonTr button{
   height: 170px;
@@ -875,11 +937,17 @@ canvas{
   font-size: 25px;
   text-align: center;
   outline: none;
-  margin: 20% auto;
+  display: block;
+  margin: 50px auto;
+}
+.btntr{
+ margin-bottom: 90px;
 }
 
 .bodyPic{
-  margin: 0 5%;
+  display: block;
+  margin: 0 auto;
+  padding-left: 12px;
 }
 .bodyPic img{
     height: 500px;
@@ -928,7 +996,7 @@ canvas{
 
 .training .body{
     height: 500px;
-  margin: 0 auto;
+  padding-left: 20px;
 }
 
 .activeBod{
@@ -940,15 +1008,15 @@ canvas{
   background-color: #ffb300;
   border: none;
   border-radius: 50px;
-  position: absolute;
-  bottom: 50px;
-  right: 60px;
+  position: fixed;
+  bottom: 80px;
+  right: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   color: rgba(14, 14, 14, 0.5);
   font-size: 50px;
   outline: none;
 }
-.training button:hover{
+.trainingBtn:hover{
   background-color: #c79100;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
@@ -970,10 +1038,7 @@ canvas{
   padding: 10px 0 0;
   z-index: -5;
 }
-.nameDashboard h1{
-  margin-left: 20px;
-  margin-bottom: 0;
-}
+
 .dashboard h3{
   padding: 10px;
   width: 100%;
@@ -1055,3 +1120,6 @@ font-size: 25px;
   color: rgb(94, 53, 177);
 }
 
+.tips h3{
+  padding: 0;
+}
