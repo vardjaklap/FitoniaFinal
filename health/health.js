@@ -24,6 +24,22 @@ angular.module('myApp.health', ['ngRoute'])
         $('#menuBut2').removeClass( "menubar2", 4500, "easeOutBounce");
         $('#menuBut3').removeClass( "menubar3", 4500, "easeOutBounce");
     };
+    $scope.textSleep = $scope.user.sleepNot;
+    $scope.submitSleep = function(){
+        var beginSleep = $('#sleepBegin').val();
+        var endSleep = $('#sleepEnd').val();
+        var begSleep = beginSleep.split(":");
+        var eSleep = endSleep.split(":");
+        $scope.user.sleepdur = (24*60)-(parseInt(begSleep[0])*60 + parseInt(begSleep[1]))+(parseInt(eSleep[0])* 60 +parseInt(eSleep[1]));
+        $scope.durSleepMinutes = $scope.user.sleepdur%60;
+        $scope.durSleepHours = Math.floor($scope.user.sleepdur/60);
+        $scope.user.sleepquality = $('input[name=quality]:checked').val();
+        $('#resultSleep').addClass("helpActive");
+        $scope.user.sleepMessage = 'Good work maintaining your cycle!';
+    };
+    $scope.hideResult = function(){
+        $('#resultSleep').removeClass("helpActive");
+    };
 
     var canvas = document.querySelector('.snowHealth'),
         ctx = canvas.getContext('2d'),

@@ -98,9 +98,6 @@ angular.module('myApp.note', ['ngRoute'])
     });
     $scope.$watch('textModelAdd',function(newValue,oldValue){
         $scope.user.noteAd = $scope.textModelAdd;
-        // if(newValue != ''){
-        //     $scope.user.noteMessage = 'You have tasks for today!'
-        // };
     });
 
 

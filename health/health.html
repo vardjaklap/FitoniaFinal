@@ -26,28 +26,28 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-4 carr sleep">
-                    <div class="row justify-content-md-center">
+                    <div class="row justify-content-center">
                         <div class="col-12 texts">
                             <h3>Start and end of your sleep:</h3>
                         </div>
                     </div>
-                    <div class="row justify-content-md-center">
+                    <div class="row justify-content-center">
                         <div class="col-5 col-md-4 inputs">
-                            <input type="time" name="time" placeholder="hh:mm" value="22:15:00" required>
+                            <input id="sleepBegin" type="time" name="time" placeholder="hh:mm" value="22:15:00" required>
                         </div>
                         <span>-</span>
                         <div class="col-5 col-md-4 inputs">
-                            <input type="time" name="time" placeholder="hh:mm" value="08:15:00" required>
+                            <input id="sleepEnd" type="time" name="time" placeholder="hh:mm" value="08:15:00" required>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 carr sleep">
-                    <div class="row justify-content-md-center">
+                    <div class="row justify-content-center">
                         <div class="col-12 col-md-10 texts">
                             <h3>Quality of your sleep:</h3>
                         </div>
                     </div>
-                    <div class="row justify-content-md-center">
+                    <div class="row justify-content-center">
                         <div class="col-12 col-md-10 star">
                             <input type="radio" name="quality" value="1">1
                             <input type="radio" name="quality" value="2">2
@@ -60,21 +60,21 @@
             </div>
             <div class="row justify-content-center">
             <div class="col-12 col-md-8 align-self-center carr">
-            <div class="row justify-content-md-center">
+            <div class="row justify-content-center">
                 <div class="col-12 col-md-4 texts">
                     <h3>Additional notes:</h3>
                 </div>
             </div>
             <div class="row justify-content-md-center">
                 <div class="col-12 col-md-8">
-                <textarea name="" id="healthText" cols="20" rows="10" ></textarea>
+                <textarea name="" id="healthText" cols="20" rows="10" ng-model="textSleep"></textarea>
                 </div>
             </div>
             </div>
             </div>
             <div class="row justify-content-md-center">
                 <div class="col-12 col-md-3">
-                <button class="sleepBtn">Submit</button>
+                <button class="sleepBtn" ng-click="submitSleep()">Submit</button>
                 </div>
             </div>
             <div class="row">
@@ -116,7 +116,14 @@
 
 <div id="helpHealthPage" class="helpOverlay" ng-click="hideHelp()">
     <div class="helpSign tipSleep">
-        <h3>#HelpHealth</h3>
-        <p>The usage is very simple: as you drink water, be sure to fill it up using these instruments. As soon as you reach 100%, your job for today is done!</p>
+        <h3>#HelpSleep</h3>
+        <p>Resting is just as important as working out. Everyday share with us your circadian cycles, so we would be able to help you achieve the best results!</p>
+    </div>
+</div>
+<div id="resultSleep" class="helpOverlay" ng-click="hideResult()">
+    <div class="helpSign tipSleep">
+        <h3>You`ve slept for <br> {{durSleepHours}} hours and {{durSleepMinutes}} minutes.<br> Your rating is: {{user.sleepquality}}.</h3>
+        <p>Additional notes: <br> {{textSleep}}</p>
+
     </div>
 </div>

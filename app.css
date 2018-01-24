@@ -36,6 +36,9 @@
 h1, h3{
   font-family: 'Roboto Slab', serif;
 }
+.button{
+  cursor: pointer;
+}
 .snow{
   position: absolute;
   top:0;
@@ -165,6 +168,7 @@ background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(33, 33, 33, 0
 #menuBut{
   height: 90px;
   padding: 35px 23px;
+  cursor: pointer;
 }
 #menuBut div{
   width: 35px;
@@ -823,6 +827,9 @@ canvas{
 .tipSleep{
   color: #7953d2;
 }
+#resultSleep h3{
+  font-size: 22px;
+}
 /*-----------------------------------FOOD (nutrition)-------------------*/
 
 
@@ -989,6 +996,7 @@ canvas{
 }
 .zone{
   width: 100%;
+  cursor: pointer;
 }
 .arms{
   height: 26%;
@@ -1156,4 +1164,29 @@ font-size: 25px;
 
 .tips h3{
   padding: 0;
+}
+
+/*------------------SETTINGS-------------------*/
+
+.lineSettings{
+  background-color: rgb(106, 0, 128);
+  width: 100%;
+  height: 20px;
+}
+.nameSettings{
+  text-align: center;
+  width: 100%;
+  background: rgb(156, 39, 176);
+  color: black;
+  height: 70px;
+  padding: 10px 0 0;
+}
+.blockSettings{
+  height: 200px;
+  padding-top: 30px;
+  color:rgb(156, 39, 176);
+  text-align: center;
+  margin-top: 40px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
