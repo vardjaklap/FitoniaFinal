@@ -36,10 +36,10 @@ angular.module('myApp.food', ['ngRoute'])
     var barFood4 = new ldBar("#carbs");
 
 
-    $scope.progressCals = 0;
-    $scope.progressFats = 0;
-    $scope.progressProt = 0;
-    $scope.progressCarbs = 0;
+    $scope.progressCals = $scope.user.cal;
+    $scope.progressFats = $scope.user.fats;
+    $scope.progressProt = $scope.user.protein;
+    $scope.progressCarbs = $scope.user.carbo;
 
     $scope.progressFood = 0;
 
@@ -71,6 +71,7 @@ angular.module('myApp.food', ['ngRoute'])
     };
         $scope.checker = 0;
     $scope.$watch('progressCals',function(newValue,oldValue){
+        $scope.user.cal = newValue;
         var progrCals = newValue / 10;
         if(newValue>=2500){
             barFood1.set(100);
@@ -84,6 +85,7 @@ angular.module('myApp.food', ['ngRoute'])
         }
     });
     $scope.$watch('progressFats',function(newValue,oldValue){
+        $scope.user.fats = newValue;
         var progrFats = newValue;
         if(newValue>=80){
             barFood2.set(100);
@@ -94,6 +96,7 @@ angular.module('myApp.food', ['ngRoute'])
         }
     });
     $scope.$watch('progressProt',function(newValue,oldValue){
+        $scope.user.protein = newValue;
         var progrProt = newValue;
         if(newValue>=130){
             barFood3.set(100);
@@ -105,6 +108,7 @@ angular.module('myApp.food', ['ngRoute'])
         }
     });
     $scope.$watch('progressCarbs',function(newValue,oldValue){
+        $scope.user.carbo = newValue;
         var progrCarbs = newValue /2;
         if(newValue>=180){
             barFood4.set(100);
