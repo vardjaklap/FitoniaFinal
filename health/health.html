@@ -67,7 +67,7 @@
             </div>
             <div class="row justify-content-md-center">
                 <div class="col-12 col-md-8">
-                <textarea name="" id="healthText" cols="20" rows="10" ng-model="textSleep"></textarea>
+                <textarea name="" id="healthText" cols="20" rows="10"></textarea>
                 </div>
             </div>
             </div>
@@ -123,7 +123,7 @@
 <div id="resultSleep" class="helpOverlay" ng-click="hideResult()">
     <div class="helpSign tipSleep">
         <h3>You`ve slept for <br> {{durSleepHours}} hours and {{durSleepMinutes}} minutes.<br> Your rating is: {{user.sleepquality}}.</h3>
-        <p>Additional notes: <br> {{textSleep}}</p>
+        <p>Additional notes: <br> {{user.textSleep}}</p>
 
     </div>
 </div>

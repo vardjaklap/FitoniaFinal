@@ -3,23 +3,27 @@
 angular.module('myApp.training', ['ngRoute'])
 
 
-    .controller('TrainingCtrl', ['$scope','$interval', '$timeout',function($scope, $interval, $timeout) {
-
+    .controller('TrainingCtrl', ['$scope','$interval', '$timeout', '$templateCache',function($scope, $interval, $timeout, $templateCache) {
+        $templateCache.removeAll();
         $scope.menuCount = 1;
+        $timeout.cancel($scope.closeMen);
         $scope.openMenu = function(){
-            $scope.menuCount += 1;
-            if($scope.menuCount%2 === 0){
+            if($scope.menuCount%2){
+                $scope.menuCount += 1;
                 $('#blocks').addClass( "blocksActive", 4500, "easeOutBounce");
                 $('#menuBut1').addClass( "menubar1", 4500, "easeOutBounce");
                 $('#menuBut2').addClass( "menubar2", 4500, "easeOutBounce");
                 $('#menuBut3').addClass( "menubar3", 4500, "easeOutBounce");
-                $timeout($scope.closeMenu, 4000);
+                $scope.closeMen = $timeout($scope.closeMenu, 4000);
             }else{
                 $scope.closeMenu();
+                $timeout.cancel($scope.closeMen);
             }
+
 
         };
         $scope.closeMenu = function(){
+            $scope.menuCount += 1;
             $('#blocks').removeClass( "blocksActive", 1000, "easeOutBounce");
             $('#menuBut1').removeClass( "menubar1", 4500, "easeOutBounce");
             $('#menuBut2').removeClass( "menubar2", 4500, "easeOutBounce");
@@ -168,44 +172,44 @@ angular.module('myApp.training', ['ngRoute'])
 
         $scope.showCardio = function(){
             $('#cardioEx').addClass("helpActive");
+            $scope.user.trainprog = true;
         };
         $scope.showArms = function(){
             $('#armsEx').addClass("helpActive");
+            $scope.user.trainprog = true;
         };
         $scope.showCore = function(){
             $('#coreEx').addClass("helpActive");
+            $scope.user.trainprog = true;
         };
         $scope.showBack = function(){
             $('#backEx').addClass("helpActive");
+            $scope.user.trainprog = true;
         };
         $scope.showLegs = function(){
             $('#legsEx').addClass("helpActive");
+            $scope.user.trainprog = true;
         };
         $scope.showStretch = function(){
             $('#stretchEx').addClass("helpActive");
+            $scope.user.trainprog = true;
         };
         $scope.hideCardio = function(){
             $('#cardioEx').removeClass("helpActive");
-            console.log('heheh')
         };
         $scope.hideArms = function(){
             $('#armsEx').removeClass("helpActive");
-            console.log('heheh')
         };
         $scope.hideCore = function(){
             $('#coreEx').removeClass("helpActive");
-            console.log('heheh')
         };
         $scope.hideBack = function(){
             $('#backEx').removeClass("helpActive");
-            console.log('heheh')
         };
         $scope.hideLegs = function(){
             $('#legsEx').removeClass("helpActive");
-            console.log('heheh')
         };
         $scope.hideStretch = function(){
             $('#stretchEx').removeClass("helpActive");
-            console.log('heheh')
         };
     }]);

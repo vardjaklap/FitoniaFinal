@@ -2,22 +2,27 @@
 
 angular.module('myApp.water', ['ngRoute', 'ngAnimate'])
 
-    .controller('WaterCtrl', ['$scope','$interval', '$timeout',function($scope, $interval, $timeout) {
+    .controller('WaterCtrl', ['$scope','$interval', '$timeout', '$templateCache',function($scope, $interval, $timeout, $templateCache) {
+        $templateCache.removeAll();
         $scope.menuCount = 1;
+        $timeout.cancel($scope.closeMen);
         $scope.openMenu = function(){
-            $scope.menuCount += 1;
-            if($scope.menuCount%2 === 0){
+            if($scope.menuCount%2){
+                $scope.menuCount += 1;
                 $('#blocks').addClass( "blocksActive", 4500, "easeOutBounce");
                 $('#menuBut1').addClass( "menubar1", 4500, "easeOutBounce");
                 $('#menuBut2').addClass( "menubar2", 4500, "easeOutBounce");
                 $('#menuBut3').addClass( "menubar3", 4500, "easeOutBounce");
-                $timeout($scope.closeMenu, 4000);
+                $scope.closeMen = $timeout($scope.closeMenu, 4000);
             }else{
                 $scope.closeMenu();
+                $timeout.cancel($scope.closeMen);
             }
+
 
         };
         $scope.closeMenu = function(){
+            $scope.menuCount += 1;
             $('#blocks').removeClass( "blocksActive", 1000, "easeOutBounce");
             $('#menuBut1').removeClass( "menubar1", 4500, "easeOutBounce");
             $('#menuBut2').removeClass( "menubar2", 4500, "easeOutBounce");
@@ -42,8 +47,8 @@ angular.module('myApp.water', ['ngRoute', 'ngAnimate'])
             mili.value = '';
 
         };
-        var bar1 = new ldBar("#barwaterld");
-        var bar2 = new ldBar("#barwaterhumanld");
+        let bar1 = new ldBar("#barwaterld");
+        let bar2 = new ldBar("#barwaterhumanld");
 
 
 
@@ -57,6 +62,7 @@ angular.module('myApp.water', ['ngRoute', 'ngAnimate'])
                 bar2.set(100);
                 bar1.set(100);
                 $timeout($scope.removeSuccess, 2500);
+                $scope.user.watprog = true;
 
             }else{
                 bar2.set(progr);

@@ -4,22 +4,27 @@ angular.module('myApp.note', ['ngRoute'])
 
 
 
-.controller('NoteCtrl', ['$scope','$interval', '$timeout',function($scope, $interval, $timeout) {
+.controller('NoteCtrl', ['$scope','$interval', '$timeout', '$templateCache',function($scope, $interval, $timeout, $templateCache) {
+    $templateCache.removeAll();
     $scope.menuCount = 1;
+    $timeout.cancel($scope.closeMen);
     $scope.openMenu = function(){
-        $scope.menuCount += 1;
-        if($scope.menuCount%2 === 0){
+        if($scope.menuCount%2){
+            $scope.menuCount += 1;
             $('#blocks').addClass( "blocksActive", 4500, "easeOutBounce");
             $('#menuBut1').addClass( "menubar1", 4500, "easeOutBounce");
             $('#menuBut2').addClass( "menubar2", 4500, "easeOutBounce");
             $('#menuBut3').addClass( "menubar3", 4500, "easeOutBounce");
-            $timeout($scope.closeMenu, 4000);
+            $scope.closeMen = $timeout($scope.closeMenu, 4000);
         }else{
             $scope.closeMenu();
+            $timeout.cancel($scope.closeMen);
         }
+
 
     };
     $scope.closeMenu = function(){
+        $scope.menuCount += 1;
         $('#blocks').removeClass( "blocksActive", 1000, "easeOutBounce");
         $('#menuBut1').removeClass( "menubar1", 4500, "easeOutBounce");
         $('#menuBut2').removeClass( "menubar2", 4500, "easeOutBounce");
@@ -39,65 +44,63 @@ angular.module('myApp.note', ['ngRoute'])
         }else if(newValue === 5){
             $('#noteFive').addClass('activeDay');
         }else if(newValue === 6){
-            $('#noteOSix').addClass('activeDay');
+            $('#noteSix').addClass('activeDay');
         }else if(newValue === 7){
             $('#noteSeven').addClass('activeDay');
         }
     });
 
-    $scope.textModelMon = $scope.user.noteM;
-    $scope.textModelTue = $scope.user.noteTue;
-    $scope.textModelWed = $scope.user.noteW;
-    $scope.textModelThur = $scope.user.noteTh;
-    $scope.textModelFri = $scope.user.noteFr;
-    $scope.textModelSat = $scope.user.noteSat;
-    $scope.textModelSun = $scope.user.noteSun;
-    $scope.textModelAdd = $scope.user.noteAd;
-
-    $scope.$watch('textModelMon',function(newValue,oldValue){
-        $scope.user.noteM = $scope.textModelMon;
+    $scope.$watch('$scope.note.noteM',function(newValue,oldValue){
         if(newValue != '' && $scope.todayIs === 1){
+            console.log('Mon');
             $scope.user.noteMessage = 'You have tasks for today!'
+            $scope.user.noteprog = true;
         };
     });
-    $scope.$watch('textModelTue',function(newValue,oldValue){
-        $scope.user.noteTue = $scope.textModelTue;
+    $scope.$watch('$scope.note.noteM',function(newValue,oldValue){
         if(newValue != '' && $scope.todayIs === 2){
-            $scope.user.noteMessage = 'You have tasks for today!'
+            console.log('Mon2');
+            $scope.user.noteMessage = 'All tasks are done!'
+            $scope.user.noteprog = true;
         };
     });
-    $scope.$watch('textModelWed',function(newValue,oldValue){
-        $scope.user.noteW = $scope.textModelWed;
+    $scope.$watch('$scope.note.noteW',function(newValue,oldValue){
         if(newValue != '' && $scope.todayIs === 3){
-            $scope.user.noteMessage = 'You have tasks for today!'
+            console.log('Mon3');
+            $scope.user.noteMessage = 'All tasks are done!';
+            $scope.user.noteprog = true;
         };
     });
-    $scope.$watch('textModelThur',function(newValue,oldValue){
-        $scope.user.noteTh = $scope.textModelThur;
+    $scope.$watch('$scope.note.noteM',function(newValue,oldValue){
         if(newValue != '' && $scope.todayIs === 4){
-            $scope.user.noteMessage = 'You have tasks for today!'
+            console.log('Mon4');
+            $scope.user.noteMessage = 'All tasks are done!'
+            $scope.user.noteprog = true;
         };
     });
-    $scope.$watch('textModelFri',function(newValue,oldValue){
-        $scope.user.noteFr = $scope.textModelFri;
+    $scope.$watch('$scope.note.noteM',function(newValue,oldValue){
         if(newValue != '' && $scope.todayIs === 5){
-            $scope.user.noteMessage = 'You have tasks for today!'
+            console.log('Mon5');
+            $scope.user.noteMessage = 'All tasks are done!'
+            $scope.user.noteprog = true;
         };
     });
-    $scope.$watch('textModelSat',function(newValue,oldValue){
-        $scope.user.noteSat = $scope.textModelSat;
+    $scope.$watch('$scope.note.noteM',function(newValue,oldValue){
         if(newValue != '' && $scope.todayIs === 6){
-            $scope.user.noteMessage = 'You have tasks for today!'
+            console.log('Mon6');
+            $scope.user.noteMessage = 'All tasks are done!'
+            $scope.user.noteprog = true;
         };
     });
-    $scope.$watch('textModelSun',function(newValue,oldValue){
-        $scope.user.noteSun = $scope.textModelSun;
+    $scope.$watch('$scope.note.noteM',function(newValue,oldValue){
         if(newValue != '' && $scope.todayIs === 7){
-            $scope.user.noteMessage = 'You have tasks for today!'
+            console.log('Mon7');
+            $scope.user.noteMessage = 'All tasks are done!'
+            $scope.user.noteprog = true;
         };
     });
-    $scope.$watch('textModelAdd',function(newValue,oldValue){
-        $scope.user.noteAd = $scope.textModelAdd;
+    $scope.$watch('$scope.note.noteM',function(newValue,oldValue){
+
     });
 
 

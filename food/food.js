@@ -4,22 +4,26 @@ angular.module('myApp.food', ['ngRoute'])
 
 
 
-.controller('FoodCtrl', ['$scope','$interval', '$timeout',function($scope, $interval, $timeout) {
+.controller('FoodCtrl', ['$scope','$interval', '$timeout', '$templateCache',function($scope, $interval, $timeout, $templateCache) {
+    $templateCache.removeAll();
     $scope.menuCount = 1;
+    $timeout.cancel($scope.closeMen);
     $scope.openMenu = function(){
-        $scope.menuCount += 1;
-        if($scope.menuCount%2 === 0){
+        if($scope.menuCount%2){
+            $scope.menuCount += 1;
             $('#blocks').addClass( "blocksActive", 4500, "easeOutBounce");
             $('#menuBut1').addClass( "menubar1", 4500, "easeOutBounce");
             $('#menuBut2').addClass( "menubar2", 4500, "easeOutBounce");
             $('#menuBut3').addClass( "menubar3", 4500, "easeOutBounce");
-            $timeout($scope.closeMenu, 4000);
+            $scope.closeMen = $timeout($scope.closeMenu, 4000);
         }else{
             $scope.closeMenu();
+            $timeout.cancel($scope.closeMen);
         }
 
     };
     $scope.closeMenu = function(){
+        $scope.menuCount += 1;
         $('#blocks').removeClass( "blocksActive", 1000, "easeOutBounce");
         $('#menuBut1').removeClass( "menubar1", 4500, "easeOutBounce");
         $('#menuBut2').removeClass( "menubar2", 4500, "easeOutBounce");
@@ -45,7 +49,7 @@ angular.module('myApp.food', ['ngRoute'])
         $scope.progressCals += 200;
         $scope.progressFats += 10;
         $scope.progressProt += 30;
-        $scope.progressCarbs += 20;
+        $scope.progressCarbs += 30;
     };
     $scope.addSoup = function(){
         $scope.progressCals += 300;
@@ -57,7 +61,7 @@ angular.module('myApp.food', ['ngRoute'])
         $scope.progressCals += 500;
         $scope.progressFats += 40;
         $scope.progressProt += 40;
-        $scope.progressCarbs += 30;
+        $scope.progressCarbs += 40;
     };
     $scope.addTarte = function(){
         $scope.progressCals += 600;
@@ -111,9 +115,11 @@ angular.module('myApp.food', ['ngRoute'])
         }
     });
     $scope.$watch('checker',function(newValue,oldValue){
-        if(barFood1.value === 100 && barFood2.value === 100 && barFood3.value === 100 && barFood4.value === 100){
+        if(barFood1.value >= 100 && barFood2.value >= 100 && barFood3.value >= 100 && barFood4.value >= 100){
 
             $('#waterSuccess').addClass( "helpActive", 1000, "easeOutBounce");
+            $scope.user.foodprog = true;
+            $scope.user.foodMessage = 'You are nourished enough!'
         }
     });
     $scope.removeSuccess = function(){

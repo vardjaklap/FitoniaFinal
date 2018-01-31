@@ -3,27 +3,54 @@
 angular.module('myApp.dashboard', ['ngRoute'])
 
 
-    .controller('DashboardCtrl', ['$scope','$interval', '$timeout',function($scope, $interval, $timeout) {
+    .controller('DashboardCtrl', ['$scope','$interval', '$timeout','$location','$templateCache', function($scope, $interval, $timeout, $location,$templateCache) {
+        console.log($scope.user.signed);
+        console.log($scope.user.sname);
+        $templateCache.removeAll();
+
+        $scope.addsucc = function(){
+            if($scope.user.sleepprog){
+                $('#dashSleep').addClass('goldSuccess');
+            };
+            if($scope.user.watprog){
+                $('#dashWat').addClass('goldSuccess');
+            };
+            if($scope.user.foodprog){
+                $('#dashFood').addClass('goldSuccess');
+            };
+            if($scope.user.noteprog){
+                $('#dashNote').addClass('goldSuccess');
+            };
+            if($scope.user.trainprog){
+                $('#dashTr').addClass('goldSuccess');
+            };
+        };
+        $scope.addsucc();
+
         $scope.menuCount = 1;
+        $timeout.cancel($scope.closeMen);
         $scope.openMenu = function(){
-            $scope.menuCount += 1;
-            if($scope.menuCount%2 === 0){
-                $('#blocks').addClass( "blocksActive", 4500, "easeOutBounce");
-                $('#menuBut1').addClass( "menubar1", 4500, "easeOutBounce");
-                $('#menuBut2').addClass( "menubar2", 4500, "easeOutBounce");
-                $('#menuBut3').addClass( "menubar3", 4500, "easeOutBounce");
-                $timeout($scope.closeMenu, 4000);
+            if($scope.menuCount%2){
+                $scope.menuCount += 1;
+                $('#blocks').addClass( "blocksActive", 500, "easeOutBounce");
+                $('#menuBut1').addClass( "menubar1", 500, "easeOutBounce");
+                $('#menuBut2').addClass( "menubar2", 500, "easeOutBounce");
+                $('#menuBut3').addClass( "menubar3", 500, "easeOutBounce");
+                $scope.closeMen = $timeout($scope.closeMenu, 4000);
             }else{
                 $scope.closeMenu();
+                $timeout.cancel($scope.closeMen);
             }
 
         };
         $scope.closeMenu = function(){
+            $scope.menuCount += 1;
             $('#blocks').removeClass( "blocksActive", 1000, "easeOutBounce");
             $('#menuBut1').removeClass( "menubar1", 4500, "easeOutBounce");
             $('#menuBut2').removeClass( "menubar2", 4500, "easeOutBounce");
             $('#menuBut3').removeClass( "menubar3", 4500, "easeOutBounce");
         };
+
 
 
         var canvas = document.querySelector('.snowDashboard'),

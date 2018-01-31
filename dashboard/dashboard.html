@@ -21,13 +21,13 @@
     <div class="overlayDashboard">
         <div class="headline">
             <div class="lineDashboard"></div>
-            <div class = "nameDashboard"><img src="./img/logo.png" alt="" class="logo"><h1>Fitonia</h1></div>
+            <div class = "nameDashboard"><img src="./img/logotry.png" alt="" id="logoDash" class="logo"><h1>Fitonia</h1></div>
         </div>
 
         <div class="container">
-            <div class="row justify-content-center dashb">
+            <div class="row dashb">
                 <div class="col-7 col-md-2 ">
-                    <div id="dashTr" class="dash">
+                    <div id="dashTr" class="dashTr dash">
                         <a href="#!/training">
                             <div>
                                 <h3>Training</h3>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="col-7 col-md-2">
-                    <div id="dashNote" class="dash">
+                    <div id="dashNote" class="dashNote dash">
                         <a href="#!/note">
                             <div>
                                 <h3>Note</h3>
@@ -49,18 +49,18 @@
                     </div>
                 </div>
                 <div class="col-7 col-md-2">
-                    <div id="dashFood" class="dash">
+                    <div id="dashFood" class="dashFood dash">
                         <a href="#!/food">
                             <div>
                                 <h3>Food</h3>
-                                <p>Try to cut out fats for today.</p>
+                                <p>{{user.foodMessage}}</p>
                                 <i class="material-icons">restaurant</i>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-7 col-md-2">
-                    <div id="dashWat" class="dash">
+                    <div id="dashWat" class="dashWat dash">
                         <a href="#!/water">
                             <div>
                                 <h3>Water</h3>
@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <div class="col-7 col-md-2">
-                    <div id="dashSleep" class="dash">
+                    <div id="dashSleep" class="dashSleep dash">
                         <a href="#!/health">
                             <div>
                                 <h3>Sleep</h3>

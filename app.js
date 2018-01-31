@@ -9,6 +9,7 @@ angular.module('myApp', ['ngAnimate',
     'myApp.health',
     'myApp.settings',
     'myApp.version',
+    'myApp.registration',
     'ngRoute'
 ])
 
@@ -45,13 +46,18 @@ angular.module('myApp', ['ngAnimate',
           templateUrl: 'water/water.html',
           controller: 'WaterCtrl'
       })
-      .otherwise({redirectTo: '/dashboard'});
+      .when('/registration', {
+          templateUrl: 'registration/registration.html',
+          controller: 'RegistrationCtrl'
+      })
+      .otherwise({redirectTo: '/registration'});
 
 }])
 
     .controller('MainCtrl', ['$scope','$interval', '$timeout',function($scope, $interval, $timeout) {
 
         $scope.user = users[1];
+        $scope.note = notes[0];
         $scope.todayIs = new Date().getDay();
         console.log($scope.todayIs);
 

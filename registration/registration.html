@@ -1,0 +1,62 @@
+
+<div class="registration">
+    <div class="colors">
+
+        <div id="redStripe" class="red stripReg leftStripe"></div>
+        <div id="orangeStripe" class="orange stripReg rightStripe"></div>
+        <div id="yellowStripe" class="yellow stripReg leftStripe"></div>
+        <div id="greenStripe" class="green stripReg rightStripe"></div>
+        <div id="blueStripe" class="blue stripReg leftStripe"></div>
+        <div id="indigoStripe" class="indigo stripReg rightStripe"></div>
+        <div id="violetStripe" class="violet stripReg leftStripe"></div>
+        <div class="overlayReg"></div>
+    </div>
+
+    <div class="panelReg">
+        <div class="container">
+            <div class="row justify-content-center">
+            <div class="col-10 col-md-5 wrapPanelReg">
+                <div class="inputsReg">
+                    <img src="./img/logotry.png" alt="" class="logo">
+                    <form name="myForm">
+                    <div name="formName" class="groupReg">
+                        <input id="nameReg" name="inputName" class="inputReg" ng-model="user.name" required>
+                        <span class="barRegInput"></span>
+                        <label class="labelRegInput">First Name</label>
+                    </div>
+                    <div name="formSname" class="groupReg">
+                        <input id="snameReg" type="text" class="inputReg" ng-model="user.sname" required>
+                        <span class="barRegInput"></span>
+                        <label class="labelRegInput">Last Name</label>
+                    </div>
+                    <div name="formEmail" class="groupReg">
+                        <input id="emailReg" type="email" class="inputReg" ng-model="user.email" required>
+                        <span class="barRegInput"></span>
+                        <label class="labelRegInput">Email</label>
+                    </div>
+                    <div name="formPass" class="groupReg">
+                        <input id="passReg" type="password" class="inputReg" ng-minlength="5" ng-model="user.pass" required>
+                        <span class="barRegInput"></span>
+                        <label class="labelRegInput">Password</label>
+                    </div>
+                    <div name="formCheck" class="termsReg">
+                        <input type="checkbox" ng-model="checkboxModel.value1">
+                        <span>I agree to the Terms of the product.</span>
+                    </div>
+                    </form>
+                    <button id="regButton" ng-click="signUpComplete()" ng-disabled="myForm.$invalid || checkboxModel.value1 !== true" >Sign up</button>
+                </div>
+                <div>
+                        <h1 class="ready">✔</h1>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="entrance">
+    <h1 id="welcomeOne" class="welcome">Welcome</h1>
+    <h1 id="welcomeTwo" class="welcome">All your progress is saved during one session</h1>
+</div>
+

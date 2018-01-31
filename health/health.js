@@ -3,22 +3,27 @@
 angular.module('myApp.health', ['ngRoute'])
 
 
-.controller('HealthCtrl', ['$scope','$interval', '$timeout',function($scope, $interval, $timeout) {
+.controller('HealthCtrl', ['$scope','$interval', '$timeout', '$templateCache', function($scope, $interval, $timeout, $templateCache) {
+    $templateCache.removeAll();
     $scope.menuCount = 1;
+    $timeout.cancel($scope.closeMen);
     $scope.openMenu = function(){
-        $scope.menuCount += 1;
-        if($scope.menuCount%2 === 0){
+        console.log($scope.menuCount);
+        if($scope.menuCount%2){
+            $scope.menuCount += 1;
             $('#blocks').addClass( "blocksActive", 4500, "easeOutBounce");
             $('#menuBut1').addClass( "menubar1", 4500, "easeOutBounce");
             $('#menuBut2').addClass( "menubar2", 4500, "easeOutBounce");
             $('#menuBut3').addClass( "menubar3", 4500, "easeOutBounce");
-            $timeout($scope.closeMenu, 4000);
+            $scope.closeMen = $timeout($scope.closeMenu, 4000);
         }else{
             $scope.closeMenu();
+            $timeout.cancel($scope.closeMen);
         }
 
     };
     $scope.closeMenu = function(){
+        $scope.menuCount += 1;
         $('#blocks').removeClass( "blocksActive", 1000, "easeOutBounce");
         $('#menuBut1').removeClass( "menubar1", 4500, "easeOutBounce");
         $('#menuBut2').removeClass( "menubar2", 4500, "easeOutBounce");
@@ -26,6 +31,7 @@ angular.module('myApp.health', ['ngRoute'])
     };
     $scope.textSleep = $scope.user.sleepNot;
     $scope.submitSleep = function(){
+        $scope.user.sleepprog = true;
         var beginSleep = $('#sleepBegin').val();
         var endSleep = $('#sleepEnd').val();
         var begSleep = beginSleep.split(":");
@@ -36,6 +42,8 @@ angular.module('myApp.health', ['ngRoute'])
         $scope.user.sleepquality = $('input[name=quality]:checked').val();
         $('#resultSleep').addClass("helpActive");
         $scope.user.sleepMessage = 'Good work maintaining your cycle!';
+        $scope.user.textSleep = $('#healthText').val();
+        console.log($scope.user.textSleep);
     };
     $scope.hideResult = function(){
         $('#resultSleep').removeClass("helpActive");
@@ -151,7 +159,6 @@ angular.module('myApp.health', ['ngRoute'])
 
     $scope.showHelp = function(){
         $('#helpHealthPage').addClass("helpActive");
-        console.log('sdsf')
     };
     $scope.hideHelp = function(){
         $('#helpHealthPage').removeClass("helpActive");
